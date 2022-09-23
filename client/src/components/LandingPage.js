@@ -30,7 +30,7 @@ function LandingPage() {
       <div className="row">
         <div className="col-md-6 gx-5 mb-4">
           <div className="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
-            <img src="https://mdbootstrap.com/img/new/slides/031.jpg" className="img-fluid" alt=''/>
+            <img src="https://images.unsplash.com/photo-1606608281523-1e5c227cd068?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bWlzc2lzc2lwcGl8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" className="img-fluid" alt=''/>
             <a href="#!">
               <div className="mask" style={{"backgroundColor": "rgba(251, 251, 251, 0.15)"}}></div>
             </a>
@@ -44,7 +44,7 @@ function LandingPage() {
             eligendi quisquam doloremque vero ex debitis veritatis placeat unde animi laborum
             sapiente illo possimus, commodi dignissimos obcaecati illum maiores corporis.
           </p>
-          <p><strong>Doloremque vero ex debitis veritatis?</strong></p>
+          <p><strong>Who doesn't like good beer?</strong></p>
           <p className="text-muted">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod itaque voluptate
             nesciunt laborum incidunt. Officia, quam consectetur. Earum eligendi aliquam illum
@@ -76,7 +76,7 @@ function LandingPage() {
                 Some quick example text to build on the card title and make up the bulk of the
                 card's content.
               </p>
-              <a href="#!" className="btn btn-primary">Button</a>
+              <a href="/breweries/:id" className="btn btn-primary">Button</a>
             </div>
           </div>
         </div>
@@ -95,7 +95,7 @@ function LandingPage() {
                 Some quick example text to build on the card title and make up the bulk of the
                 card's content.
               </p>
-              <a href="#!" className="btn btn-primary">Button</a>
+              <a href="/breweries/:id" className="btn btn-primary">Button</a>
             </div>
           </div>
         </div>
@@ -114,7 +114,7 @@ function LandingPage() {
                 Some quick example text to build on the card title and make up the bulk of the
                 card's content.
               </p>
-              <a href="#!" className="btn btn-primary">Button</a>
+              <a href="/breweries/:id" className="btn btn-primary">Button</a>
             </div>
           </div>
         </div>

@@ -1,7 +1,5 @@
 import React from 'react';
 
-        // <img src='https://images.pexels.com/photos/5935219/pexels-photo-5935219.jpeg?auto=compress&cs=tinysrgb&w=1600' alt='goodbye toast'/>
-
 
 function Logout() {
 
@@ -16,16 +14,15 @@ function Logout() {
                 <div className="text-white px-4">
       
                   {/* <!-- Bye Message --> */}
-                  <h3 id="time-counter" className="border border-light my-4 p-4"></h3>
+                  <h3 className="border border-light my-4 p-4">...Come back Soon</h3>
       
-                  <p>We're working hard to finish the development of this site.</p>
+                  <p>We're working hard to keep the site updated.</p>
       
-                  <p>Until then have a look at our Free Bootstrap 5 tutorials</p>
+                  <p>If you would like to submit other breweries, let the staff know!</p>
       
-                  <a className="btn btn-outline-light btn-lg m-2" href="https://www.youtube.com/watch?v=c9B4TPnak1A" role="button"
-                    rel="nofollow" target="_blank">Start tutorial</a>
-                  <a className="btn btn-outline-light btn-lg m-2" href="https://mdbootstrap.com/docs/standard/" target="_blank"
-                    role="button">Download MDB UI KIT</a>
+                  <a className="btn btn-outline-light btn-lg m-2" href="/" role="button"
+                    rel="nofollow">Mention a new brewery</a>
+                  <a className="btn btn-outline-light btn-lg m-2" href="/" role="button">Home</a>
                 </div>
               </div>
             </div>
@@ -42,7 +39,7 @@ function Logout() {
               <div className="row">
                 <div className="col-md-6 gx-5 mb-4 d-lg-flex align-items-center">
                   <div>
-                    <h4><strong>Didn't mean to logout..<br/>Log back in---> </strong></h4>
+                    <h4><strong>Didn't mean to logout..<br/>Log back in ➡️ </strong></h4>
                     <p className="text-muted">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis consequatur
                       eligendi quisquam doloremque vero ex debitis veritatis placeat unde animi laborum

@@ -4,7 +4,8 @@
 
 /* -------------------landing page -------------------*/
 #landing-intro {
-  background-image: url("https://mdbootstrap.com/img/new/fluid/city/018.jpg");
+  /* background-image: url("https://mdbootstrap.com/img/new/fluid/city/018.jpg"); */
+  background-image: url("https://images.pexels.com/photos/5935219/pexels-photo-5935219.jpeg?auto=compress&cs=tinysrgb&w=1600");
   height: 100vh;
 }
 
@@ -42,7 +43,8 @@
 
 /* Default height for small devices */
  #logout-intro {
-  background-image: url("https://mdbootstrap.com/img/new/slides/205.jpg");
+  background-image: url("https://images.pexels.com/photos/1267700/pexels-photo-1267700.jpeg?auto=compress&cs=tinysrgb&w=1600");
+  /* background-image: url("https://mdbootstrap.com/img/new/slides/205.jpg"); */
   height: 600px;
 
   margin-top: 58px;
