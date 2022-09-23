@@ -5,17 +5,17 @@ import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom';
-// import { BreweryProvider } from './components/context/BreweryContext';
+import { BreweryProvider } from './components/context/BreweryContext';
 
 ReactDOM.render(
   <Router>
-    <React.StrictMode>
-    {/* <BreweryProvider> */}
+    {/* <React.StrictMode> */}
+    <BreweryProvider>
       <App />
-    {/* </BreweryProvider> */}
-  </React.StrictMode>
-  </Router>,
-  document.getElementById('root')
+    </BreweryProvider>
+  {/* </React.StrictMode> */}
+  </Router>
+  ,document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function

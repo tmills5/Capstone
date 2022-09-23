@@ -2,8 +2,8 @@
   text-align: center;
 }
 
-
-#intro {
+/* -------------------landing page -------------------*/
+#landing-intro {
   background-image: url("https://mdbootstrap.com/img/new/fluid/city/018.jpg");
   height: 100vh;
 }
@@ -18,3 +18,52 @@
 .navbar .nav-link {
   color: #fff !important;
 }
+
+/* ---------------------login------------------------- */
+
+
+#login-intro {
+  background-image: url('https://mdbootstrap.com/img/new/fluid/city/008.jpg');
+  height: 100vh;
+}
+
+
+@media (min-width: 992px) {
+  #intro {
+    margin-top: -58.59px;
+  }
+}
+
+.navbar .nav-link {
+  color: #fff !important;
+}
+
+/* -------------------------logout-------------------------- */
+
+/* Default height for small devices */
+ #logout-intro {
+  background-image: url("https://mdbootstrap.com/img/new/slides/205.jpg");
+  height: 600px;
+
+  margin-top: 58px;
+}
+
+@media (max-width: 991px) {
+        #intro {
+      
+        margin-top: 45px;
+    }
+}
+
+/* ----------------------User Profile-------------------------- */
+
+.gradient-custom-2 {
+  /* fallback for old browsers */
+  background: white;
+  
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, rgb(247, 250, 250), rgba(166, 193, 238, 1));
+  
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgb(247, 250, 250), rgba(166, 193, 238, 1))
+  }
