@@ -1,13 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter as Router } from 'react-router-dom';
+// import { BreweryProvider } from './components/context/BreweryContext';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Router>
+    <React.StrictMode>
+    {/* <BreweryProvider> */}
+      <App />
+    {/* </BreweryProvider> */}
+  </React.StrictMode>
+  </Router>,
   document.getElementById('root')
 );
 
