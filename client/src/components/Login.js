@@ -1,6 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-function Login() {
+function Login( {setUser, navigate} ) {
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
+  const [errors, setErrors] = useState([])
+
+  const onLoginSubmit = (e) =>{
+      e.preventDefault()
+      let user = {
+          username,
+          password
+      }
+
+      fetch(`/login`,{
+        method:'POST',
+        headers:{'Content-Type': 'application/json'},
+        body:JSON.stringify(user)
+      })
+      .then(res => res.json())
+      .then(user => {
+        setUser(user);
+
+        console.log(user.error)
+        // need the values from the object. user.error is an object but i need
+        // it in an array
+        if(user.error) setErrors(Object.values(user.error))
+      })
+
+      // console.log(user.error)
+      setUsername('');
+      setPassword('');
+      setErrors([]);
+      navigate('/breweries')
+  }
     return (
     <>
               {/* <!--Main Navigation--> */}
@@ -16,13 +48,13 @@ function Login() {
                 <h4>Welcome Back...</h4>
                 {/* <!-- Username input --> */}
                 <div class="form-outline mb-4">
-                  <input type="email" id="form1Example1" class="form-control" />
+                  <input type="text" id="form1Example1" class="form-control" value={username} onChange={(e) => setUsername(e.target.value)} />
                   <label class="form-label" for="form1Example1">Username</label>
                 </div>
 
                 {/* <!-- Password input --> */}
                 <div class="form-outline mb-4">
-                  <input type="password" id="form1Example2" class="form-control" />
+                  <input type="password" id="form1Example2" class="form-control" value={password} onChange={(e) => setPassword(e.target.value)} />
                   <label class="form-label" for="form1Example2">Password</label>
                 </div>
 
@@ -33,12 +65,13 @@ function Login() {
                 </div> */}
 
                 {/* <!-- Submit button --> */}
-                <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                <button type="submit" class="btn btn-primary btn-block" onClick={onLoginSubmit}>Sign in</button>
                 <hr/>
                 <div class="col text-center">
                   {/* <!-- Simple link --> */}
                   <a href="/signup">...or sign up</a>
                 </div>
+                {<p style={{ color: "red" }}>{errors}</p>}
               </form>
             </div>
           </div>

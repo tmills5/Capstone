@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Footer() {
+function Footer( { user } ) {
     return (
         <>
         {/* <!--Footer--> */}
@@ -30,6 +30,7 @@ function Footer() {
     © 2022 Copyright:
     <a className="text-dark" href="https://tmillsdev.ghost.io" target="_blank" rel="noreferrer"> TmillsDev</a>
   </div>
+  <p>{user ? user.username : ''}</p>
   {/* <!-- Copyright --> */}
 </footer>
 {/* <!--Footer--> */}

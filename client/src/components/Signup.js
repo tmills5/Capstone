@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 function Signup( {setUser} ) {
   const [email, setEmail] = useState('')
   const [username, setUsername] = useState('')
+  const [userFirstName, setUserFirstName] = useState('')
+  const [userLastName, setUserLastName] = useState('')
   const [password, setPassword] = useState('')
   const [errors, setErrors] = useState([])
 
@@ -12,6 +14,8 @@ function Signup( {setUser} ) {
       let user = {
         email: email,
         username: username,
+        first_name: userFirstName,
+        last_name: userLastName,
         password
       }
      
@@ -29,6 +33,8 @@ function Signup( {setUser} ) {
       console.log(errors)
       setEmail('')
       setUsername('');
+      setUserFirstName('');
+      setUserLastName('');
       setPassword('');
   }
 
@@ -50,9 +56,19 @@ function Signup( {setUser} ) {
                   <input type="email" id="form1Example" class="form-control" value={email} onChange={(e) => setEmail(e.target.value)}/>
                   <label class="form-label" for="form1Example1">Email address</label>
                 </div>
+                {/* <!-- First name input --> */}
+                <div class="form-outline mb-4">
+                  <input type="text" id="form1Example1" class="form-control" value={userFirstName} onChange={(e) => setUserFirstName(e.target.value)}/>
+                  <label class="form-label" for="form1Example1">Username</label>
+                </div>
+                {/* <!-- Last name input -->  */}
+                <div class="form-outline mb-4">
+                  <input type="text" id="form1Example1" class="form-control" value={userLastName} onChange={(e) => setUserLastName(e.target.value)}/>
+                  <label class="form-label" for="form1Example1">Username</label>
+                </div>
                 {/* <!-- Username input --> */}
                 <div class="form-outline mb-4">
-                  <input type="email" id="form1Example1" class="form-control" value={username} onChange={(e) => setUsername(e.target.value)}/>
+                  <input type="text" id="form1Example1" class="form-control" value={username} onChange={(e) => setUsername(e.target.value)}/>
                   <label class="form-label" for="form1Example1">Username</label>
                 </div>
 
@@ -71,7 +87,7 @@ function Signup( {setUser} ) {
                 {/* <!-- Submit button --> */}
                 
                 <hr/>
-                <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+                <button type="submit" class="btn btn-primary btn-block" onClick={onSubmit}>Sign Up</button>
               </form>
             </div>
           </div>

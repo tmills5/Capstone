@@ -1,6 +1,17 @@
 import React from 'react';
 
-function NavBar() {
+function NavBar({ user, setUser }) {
+  
+  const logout = () => {
+    fetch('/logout', {
+      method: 'DELETE'
+    })
+      .then(()=>{
+        setUser()
+      }
+      );
+  }
+
     return(
         <>
           {/* <!-- Navbar --> */}
@@ -9,6 +20,7 @@ function NavBar() {
     {/* <!-- Navbar brand --> */}
     <a className="navbar-brand nav-link" href="/">
       <strong>MBH</strong>
+ 
     </a>
     <button className="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
       aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,7 +35,7 @@ function NavBar() {
           <a className="nav-link" href="/users/:id" rel="nofollow">User Profile</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="/logout">Logout</a>
+          <a className="nav-link" href="/logout" onClick={logout}>Logout</a>
         </li>
       </ul>
 
