@@ -50,7 +50,7 @@ function App() {
         
       </Routes>
 
-      <Footer user={user}/>
+      {/* <Footer user={user}/> */}
     </div>
 
   );
