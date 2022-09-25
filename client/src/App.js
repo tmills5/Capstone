@@ -35,7 +35,7 @@ function App() {
   return (
 
     <div className="App">
-      <NavBar user={user} setUser={setUser}/>
+      <NavBar user={user} setUser={setUser} navigate={navigate}/>
 
       <Routes>
         <Route exact path='/' element={ <LandingPage  /> } />
@@ -50,7 +50,7 @@ function App() {
         
       </Routes>
 
-      {/* <Footer user={user}/> */}
+      <Footer user={user}/>
     </div>
 
   );
