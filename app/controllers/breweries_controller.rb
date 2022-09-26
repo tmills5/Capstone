@@ -9,7 +9,7 @@ class BreweriesController < ApplicationController
     def show
         brewery = find_brewery
         if brewery
-        render json: brewery
+        render json: brewery, include: [:comments]
         else
         render json: {error: "Brewery Not Found"}, status: :not_found
         end

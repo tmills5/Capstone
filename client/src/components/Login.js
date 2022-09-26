@@ -21,17 +21,18 @@ function Login( {setUser, navigate} ) {
       .then(user => {
         setUser(user);
 
-        console.log(user.error)
+        
         // need the values from the object. user.error is an object but i need
         // it in an array
         if(user.error) setErrors(Object.values(user.error))
+        // console.log(user.error)
       })
 
       // console.log(user.error)
       setUsername('');
       setPassword('');
       setErrors([]);
-      navigate('/breweries')
+
   }
     return (
     <>

@@ -1,14 +1,25 @@
 import React, { useState, useEffect } from 'react';
-// import { useParams} from 'react-router-dom';
+import { useParams} from 'react-router-dom';
 
 function BreweryShowDetail() {
+  const [brewery, setBrewery] = useState({})
+  const params = useParams();
+  const { id, name, brewery_type, street, city, state, phone, website_url } = brewery 
 
+  useEffect(()=>{
+    fetch(`/breweries/${params.id}`)
+        .then(res => res.json())
+        .then(data => {
+   console.log(data)
+    setBrewery(data)
+    })
+},[params.id])
 
     return (
       <>
       {/* <!-- Jumbotron --> */}
       <div id="intro" class="p-5 text-center bg-light">
-        <h1 class="mb-0 h4">This will be the name of the brewery</h1>
+        <h1 class="mb-0 h4">{name}</h1>
       </div>
       {/* <!-- Jumbotron --> */}
   
@@ -54,51 +65,7 @@ function BreweryShowDetail() {
   
             {/* <!--Section: Text--> */}
             <section>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio sapiente molestias
-                consectetur. Fuga nulla officia error placeat veniam, officiis rerum laboriosam
-                ullam molestiae magni velit laborum itaque minima doloribus eligendi! Lorem ipsum,
-                dolor sit amet consectetur adipisicing elit. Optio sapiente molestias consectetur.
-                Fuga nulla officia error placeat veniam, officiis rerum laboriosam ullam molestiae
-                magni velit laborum itaque minima doloribus eligendi!
-              </p>
-  
-              <p><strong>Optio sapiente molestias consectetur?</strong></p>
-  
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum architecto ex ab aut
-                tempora officia libero praesentium, sint id magnam eius natus unde blanditiis. Autem
-                adipisci totam sit consequuntur eligendi.
-              </p>
-  
-              <p class="note note-light">
-                <strong>Note:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Optio odit consequatur porro sequi ab distinctio modi. Rerum cum dolores sint,
-                adipisci ad veritatis laborum eaque illum saepe mollitia ut voluptatum.
-              </p>
-  
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, libero repellat
-                molestiae aperiam laborum aliquid atque magni nostrum, inventore perspiciatis
-                possimus quia incidunt maiores molestias eaque nam commodi! Magnam, labore.
-              </p>
-  
-              <img src="https://mdbootstrap.com/img/new/slides/041.jpg" class="img-fluid shadow-1-strong rounded-5 mb-4"
-                alt="" />
-  
-              <ul>
-                <li>Lorem</li>
-                <li>Ipsum</li>
-                <li>Dolor</li>
-                <li>Sit</li>
-                <li>Amet</li>
-              </ul>
-  
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, temporibus nulla
-                voluptatibus accusantium sapiente doloremque. Doloribus ratione laboriosam culpa. Ab
-                officiis quidem, debitis nostrum in accusantium dolore veritatis eius est?
-              </p>
+
             </section>
             {/* <!--Section: Text--> */}
   
@@ -203,32 +170,8 @@ function BreweryShowDetail() {
   
             {/* <!--Section: Reply--> */}
             <section>
-              <p class="text-center"><strong>Leave a reply</strong></p>
+
   
-              <form>
-                {/* <!-- Name input --> */}
-                <div class="form-outline mb-4">
-                  <input type="text" id="form4Example1" class="form-control" />
-                  <label class="form-label" for="form4Example1">Name</label>
-                </div>
-  
-                {/* <!-- Email input --> */}
-                <div class="form-outline mb-4">
-                  <input type="email" id="form4Example2" class="form-control" />
-                  <label class="form-label" for="form4Example2">Email address</label>
-                </div>
-  
-                {/* <!-- Message input --> */}
-                <div class="form-outline mb-4">
-                  <textarea class="form-control" id="form4Example3" rows="4"></textarea>
-                  <label class="form-label" for="form4Example3">Text</label>
-                </div>
-  
-                {/* <!-- Submit button --> */}
-                <button type="submit" class="btn btn-primary btn-block mb-4">
-                  Publish
-                </button>
-              </form>
             </section>
             {/* <!--Section: Reply--> */}
           </div>
@@ -251,7 +194,9 @@ function BreweryShowDetail() {
     {/* <!--Main layout--> */}
     </>
     )
-} export default BreweryShowDetail;
+} 
+
+export default BreweryShowDetail;
 
 
 // const [brewery, setBrewery] = useState({})

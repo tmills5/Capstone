@@ -2,10 +2,25 @@ import React from 'react';
 // import { BreweryConsumer } from './context/BreweryContext';
 
 function BreweryCard( {brewery} ) {
+  const { id, name, city } = brewery;
 
 
   return(
-    <></>
+<div class="card text-center ">
+  <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+    <img src="https://mdbootstrap.com/img/new/standard/nature/111.webp" class="img-fluid" alt='brewery'/>
+    <a href="#!">
+      <div class="mask" style={{"background-color": "rgba(251, 251, 251, 0.15)"}}></div>
+    </a>
+  </div>
+
+  <div class="card-body">
+    <h5 class="card-title">{name} - {city}</h5>
+    <a href={`/breweries/${id}`}>
+    <button type="button" class="btn btn-primary">More</button>
+    </a>
+  </div>
+</div>
   )
 };
 

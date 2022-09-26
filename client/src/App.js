@@ -38,7 +38,7 @@ function App() {
       <NavBar user={user} setUser={setUser} navigate={navigate}/>
 
       <Routes>
-        <Route exact path='/' element={ <LandingPage  /> } />
+        <Route exact path='/' element={ <LandingPage  errors={errors} setErrors={setErrors} /> } />
         <Route exact path='/login' element={ <Login  user={user} setUser={setUser} navigate={navigate} /> } />
         <Route exact path='/logout' element={ <Logout /> } />
         <Route exact path='/signup' element={ <Signup setUser={setUser} /> } />
@@ -50,7 +50,7 @@ function App() {
         
       </Routes>
 
-      <Footer user={user}/>
+      <Footer/>
     </div>
 
   );

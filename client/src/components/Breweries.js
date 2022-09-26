@@ -3,32 +3,31 @@ import { BreweryConsumer } from './context/BreweryContext';
 import BreweryCard from './BreweryCard';
 
 
-
-
-
 function Breweries( {user} ) {
+
     return (
+      <>
+      {/* <!------- SEARCH BAR ---------> */}
 
-        <>
-        {/* <!------- SEARCH BAR ---------> */}
+      <br/>
+            <div class="container-fluid">
+              <form class="d-flex input-group w-auto">
+                <input
+                  type="search"
+                  class="form-control rounded"
+                  placeholder="Search"
+                  aria-label="Search"
+                  aria-describedby="search-addon"
+                />
+                <span class="input-group-text text-white border-0" id="search-addon">
+                  <i class="fas fa-search"></i>
+                </span>
+              </form>
+            </div>
 
-        <br/>
-  <div class="container-fluid">
-    <form class="d-flex input-group w-auto">
-      <input
-        type="search"
-        class="form-control rounded"
-        placeholder="Search"
-        aria-label="Search"
-        aria-describedby="search-addon"
-      />
-      <span class="input-group-text text-white border-0" id="search-addon">
-        <i class="fas fa-search"></i>
-      </span>
-    </form>
-  </div>
-
-            {user ? 
+      <hr/>
+        
+      {user ? 
             <>
             <div id="intro" className="p-5 text-center bg-light">
               <h1 className="mb-3 h2">Local Breweries in Mississippi</h1>
@@ -45,143 +44,144 @@ function Breweries( {user} ) {
             </BreweryConsumer>
             </>
             :
-            <div>Please Login or Sign up...</div>}
-            
-        </>
+            <div className="unauth-view-brew">Please Login or Sign up...</div>}
+          
+        
+  </>
 // -------------------------------------------------------
 
 // {/* <>
 //       {user ? 
 //     <>
 //         {/* <!-- Jumbotron --> */}
-//         <div id="intro" className="p-5 text-center bg-light">
-//           <h1 className="mb-3 h2">Local Breweries in Mississippi</h1>
-//           <p className="mb-3">Discover your next great southern brew</p>
+//         <div id="intro" classNameName="p-5 text-center bg-light">
+//           <h1 classNameName="mb-3 h2">Local Breweries in Mississippi</h1>
+//           <p classNameName="mb-3">Discover your next great southern brew</p>
 //         </div>
 //         {/* <!-- Jumbotron --> */}
    
 //        {/* <!--Main Navigation-->
     
 //        <!--Main layout--> */}
-//       <main className="my-5">
-//         <div className="container">
+//       <main classNameName="my-5">
+//         <div classNameName="container">
 //           {/* <!--Section: Content--> */}
-//           <section className="text-center">
-//             <h4 className="mb-5"><strong>Latest Breweries</strong></h4>
+//           <section classNameName="text-center">
+//             <h4 classNameName="mb-5"><strong>Latest Breweries</strong></h4>
 //     {/* Add search function here  */}
-//             <div className="row">
-//               <div className="col-lg-4 col-md-12 mb-4">
-//                 <div className="card">
-//                   <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-//                     <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" className="img-fluid" alt=''/>
+//             <div classNameName="row">
+//               <div classNameName="col-lg-4 col-md-12 mb-4">
+//                 <div classNameName="card">
+//                   <div classNameName="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+//                     <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" classNameName="img-fluid" alt=''/>
 //                     <a href="#!">
-//                       <div className="mask" style={{"backgroundColor": "rgba(251, 251, 251, 0.15)"}}></div>
+//                       <div classNameName="mask" style={{"backgroundColor": "rgba(251, 251, 251, 0.15)"}}></div>
 //                     </a>
 //                   </div>
-//                   <div className="card-body">
-//                     <h5 className="card-title">Post title</h5>
-//                     <p className="card-text">
+//                   <div classNameName="card-body">
+//                     <h5 classNameName="card-title">Post title</h5>
+//                     <p classNameName="card-text">
 //                       Some quick example text to build on the card title and make up the bulk of the
 //                       card's content.
 //                     </p>
-//                     <a href="/breweries/:id" className="btn btn-primary">Read</a>
+//                     <a href="/breweries/:id" classNameName="btn btn-primary">Read</a>
 //                   </div>
 //                 </div>
 //               </div>
     
-//               {/* <div className="col-lg-4 col-md-6 mb-4">
-//                 <div className="card">
-//                   <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-//                     <img src="https://mdbootstrap.com/img/new/standard/nature/023.jpg" className="img-fluid" alt=''/>
+//               {/* <div classNameName="col-lg-4 col-md-6 mb-4">
+//                 <div classNameName="card">
+//                   <div classNameName="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+//                     <img src="https://mdbootstrap.com/img/new/standard/nature/023.jpg" classNameName="img-fluid" alt=''/>
 //                     <a href="#!">
-//                       <div className="mask" style={{"background-color": "rgba(251, 251, 251, 0.15)"}}></div>
+//                       <div classNameName="mask" style={{"background-color": "rgba(251, 251, 251, 0.15)"}}></div>
 //                     </a>
 //                   </div>
-//                   <div className="card-body">
-//                     <h5 className="card-title">Post title</h5>
-//                     <p className="card-text">
+//                   <div classNameName="card-body">
+//                     <h5 classNameName="card-title">Post title</h5>
+//                     <p classNameName="card-text">
 //                       Some quick example text to build on the card title and make up the bulk of the
 //                       card's content.
 //                     </p>
-//                     <a href="#!" className="btn btn-primary">Read</a>
+//                     <a href="#!" classNameName="btn btn-primary">Read</a>
 //                   </div>
 //                 </div>
 //               </div> */}
     
-//               {/* <div className="col-lg-4 col-md-6 mb-4">
-//                 <div className="card">
-//                   <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-//                     <img src="https://mdbootstrap.com/img/new/standard/nature/111.jpg" className="img-fluid" alt=''/>
+//               {/* <div classNameName="col-lg-4 col-md-6 mb-4">
+//                 <div classNameName="card">
+//                   <div classNameName="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+//                     <img src="https://mdbootstrap.com/img/new/standard/nature/111.jpg" classNameName="img-fluid" alt=''/>
 //                     <a href="#!">
-//                       <div className="mask" style={{"background-color": "rgba(251, 251, 251, 0.15)"}}></div>
+//                       <div classNameName="mask" style={{"background-color": "rgba(251, 251, 251, 0.15)"}}></div>
 //                     </a>
 //                   </div>
-//                   <div className="card-body">
-//                     <h5 className="card-title">Post title</h5>
-//                     <p className="card-text">
+//                   <div classNameName="card-body">
+//                     <h5 classNameName="card-title">Post title</h5>
+//                     <p classNameName="card-text">
 //                       Some quick example text to build on the card title and make up the bulk of the
 //                       card's content.
 //                     </p>
-//                     <a href="#!" className="btn btn-primary">Read</a>
+//                     <a href="#!" classNameName="btn btn-primary">Read</a>
 //                   </div>
 //                 </div>
 //               </div>
 //             </div> */}
     
-//             {/* <div className="row">
-//               <div className="col-lg-4 col-md-12 mb-4">
-//                 <div className="card">
-//                   <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-//                     <img src="https://mdbootstrap.com/img/new/standard/nature/002.jpg" className="img-fluid" alt=''/>
+//             {/* <div classNameName="row">
+//               <div classNameName="col-lg-4 col-md-12 mb-4">
+//                 <div classNameName="card">
+//                   <div classNameName="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+//                     <img src="https://mdbootstrap.com/img/new/standard/nature/002.jpg" classNameName="img-fluid" alt=''/>
 //                     <a href="#!">
-//                       <div className="mask" style={{"background-color": "rgba(251, 251, 251, 0.15)"}}></div>
+//                       <div classNameName="mask" style={{"background-color": "rgba(251, 251, 251, 0.15)"}}></div>
 //                     </a>
 //                   </div>
-//                   <div className="card-body">
-//                     <h5 className="card-title">Post title</h5>
-//                     <p className="card-text">
+//                   <div classNameName="card-body">
+//                     <h5 classNameName="card-title">Post title</h5>
+//                     <p classNameName="card-text">
 //                       Some quick example text to build on the card title and make up the bulk of the
 //                       card's content.
 //                     </p>
-//                     <a href="#!" className="btn btn-primary">Read</a>
+//                     <a href="#!" classNameName="btn btn-primary">Read</a>
 //                   </div>
 //                 </div>
 //               </div> */}
     
-//               {/* <div className="col-lg-4 col-md-6 mb-4">
-//                 <div className="card">
-//                   <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-//                     <img src="https://mdbootstrap.com/img/new/standard/nature/022.jpg" className="img-fluid" alt=''/>
+//               {/* <div classNameName="col-lg-4 col-md-6 mb-4">
+//                 <div classNameName="card">
+//                   <div classNameName="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+//                     <img src="https://mdbootstrap.com/img/new/standard/nature/022.jpg" classNameName="img-fluid" alt=''/>
 //                     <a href="#!">
-//                       <div className="mask" style={{"background-color": "rgba(251, 251, 251, 0.15)"}}></div>
+//                       <div classNameName="mask" style={{"background-color": "rgba(251, 251, 251, 0.15)"}}></div>
 //                     </a>
 //                   </div>
-//                   <div className="card-body">
-//                     <h5 className="card-title">Post title</h5>
-//                     <p className="card-text">
+//                   <div classNameName="card-body">
+//                     <h5 classNameName="card-title">Post title</h5>
+//                     <p classNameName="card-text">
 //                       Some quick example text to build on the card title and make up the bulk of the
 //                       card's content.
 //                     </p>
-//                     <a href="#!" className="btn btn-primary">Read</a>
+//                     <a href="#!" classNameName="btn btn-primary">Read</a>
 //                   </div>
 //                 </div>
 //               </div> */}
     
-//               {/* <div className="col-lg-4 col-md-6 mb-4">
-//                 <div className="card">
-//                   <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-//                     <img src="https://mdbootstrap.com/img/new/standard/nature/035.jpg" className="img-fluid" alt=''/>
+//               {/* <div classNameName="col-lg-4 col-md-6 mb-4">
+//                 <div classNameName="card">
+//                   <div classNameName="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+//                     <img src="https://mdbootstrap.com/img/new/standard/nature/035.jpg" classNameName="img-fluid" alt=''/>
 //                     <a href="#!">
-//                       <div className="mask" style={{"background-color": "rgba(251, 251, 251, 0.15)"}}></div>
+//                       <div classNameName="mask" style={{"background-color": "rgba(251, 251, 251, 0.15)"}}></div>
 //                     </a>
 //                   </div>
-//                   <div className="card-body">
-//                     <h5 className="card-title">Post title</h5>
-//                     <p className="card-text">
+//                   <div classNameName="card-body">
+//                     <h5 classNameName="card-title">Post title</h5>
+//                     <p classNameName="card-text">
 //                       Some quick example text to build on the card title and make up the bulk of the
 //                       card's content.
 //                     </p>
-//                     <a href="#!" className="btn btn-primary">Read</a>
+//                     <a href="#!" classNameName="btn btn-primary">Read</a>
 //                   </div>
 //                 </div>
 //               </div> */}
@@ -190,18 +190,18 @@ function Breweries( {user} ) {
 //           {/* <!--Section: Content--> */}
     
 //           {/* <!-- Pagination --> */}
-//           <nav className="my-4" aria-label="...">
-//             <ul className="pagination pagination-circle justify-content-center">
-//               <li className="page-item">
-//                 <a className="page-link" href="#" tabIndex="-1" aria-disabled="true">Previous</a>
+//           <nav classNameName="my-4" aria-label="...">
+//             <ul classNameName="pagination pagination-circle justify-content-center">
+//               <li classNameName="page-item">
+//                 <a classNameName="page-link" href="#" tabIndex="-1" aria-disabled="true">Previous</a>
 //               </li>
-//               <li className="page-item"><a className="page-link" href="#">1</a></li>
-//               <li className="page-item active" aria-current="page">
-//                 <a className="page-link" href="#">2 <span className="sr-only">(current)</span></a>
+//               <li classNameName="page-item"><a classNameName="page-link" href="#">1</a></li>
+//               <li classNameName="page-item active" aria-current="page">
+//                 <a classNameName="page-link" href="#">2 <span classNameName="sr-only">(current)</span></a>
 //               </li>
-//               <li className="page-item"><a className="page-link" href="#">3</a></li>
-//               <li className="page-item">
-//                 <a className="page-link" href="#">Next</a>
+//               <li classNameName="page-item"><a classNameName="page-link" href="#">3</a></li>
+//               <li classNameName="page-item">
+//                 <a classNameName="page-link" href="#">Next</a>
 //               </li>
 //             </ul>
 //           </nav>

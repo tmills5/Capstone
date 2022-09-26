@@ -30,7 +30,6 @@ function Footer( { user } ) {
     © 2022 Copyright:
     <a className="text-dark" href="https://tmillsdev.ghost.io" target="_blank" rel="noreferrer"> TmillsDev</a>
   </div>
-  <p>{user ? user.username : ''}</p>
   {/* <!-- Copyright --> */}
 </footer>
 {/* <!--Footer--> */}

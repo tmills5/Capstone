@@ -19,6 +19,13 @@
   color: #fff !important;
 }
 
+/* ---------------------breweries-------------------- */
+
+.unauth-view-brew {
+  height: 30rem;
+  font-size: xx-large;
+}
+
 /* ---------------------login------------------------- */
 
 

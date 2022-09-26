@@ -2,7 +2,7 @@ require 'rest-client'
 require 'json'
 
 User.destroy_all
-# Comment.destroy_all
+Comment.destroy_all
 Brewery.destroy_all
 
 puts "Seeding Users..---------------------------"
@@ -62,5 +62,25 @@ brewery_dataset();
 #         phone: brewery["phone"],
 #         website_url: brewery["website_url"]
 #         )
+
+puts "Seeding Comments...-----------------------"
+
+30.times do
+  Comment.create!(
+    comment_body: Faker::Lorem.sentence(word_count: 3, supplemental: true, random_words_to_add: 4),
+    user_id: rand(1..6),
+    brewery_id: rand(1..16)
+  )
+end
+
+puts "Seeding Newsletter Emails...---------------"
+
+20.times do
+  Newsletter.create!(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    email: Faker::Internet.email
+  )
+end
 
 puts "...DONE!"
