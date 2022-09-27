@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :newsletters
   resources :comments
   
-  # post '/search_breweries', to: 'breweries#search_breweries'
+  post '/brewery_search', to: 'breweries#brewery_search'
 
   resources :breweries, only: [:show, :index] do
     resources :comments, only: [:show, :index]

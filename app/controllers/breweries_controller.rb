@@ -15,11 +15,10 @@ class BreweriesController < ApplicationController
         end
     end
 
-    def search_breweries
+    def brewery_search
         # byebug
-        breweries = Brewery.all.select { |b| brewery.include? params[:searchQuery]}
+        breweries = Brewery.all.select { |brewery| brewery.city.include? params[:breweryQuery]}
         render json: breweries
-
     end
 
 private

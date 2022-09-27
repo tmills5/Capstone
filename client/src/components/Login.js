@@ -32,8 +32,8 @@ function Login( {setUser, navigate} ) {
       setUsername('');
       setPassword('');
       setErrors([]);
+    }
 
-  }
     return (
     <>
               {/* <!--Main Navigation--> */}

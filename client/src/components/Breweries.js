@@ -1,29 +1,63 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BreweryConsumer } from './context/BreweryContext';
 import BreweryCard from './BreweryCard';
 
 
 function Breweries( {user} ) {
+  const [breweryQuery, setBreweryQuery] = useState('');
+  // const filteredBreweryArray = !breweryQuery ? breweries : [...breweries].filter(brewery=>
+  //   brewery.name.toLowerCase().includes(breweryQuery.toLocaleLowerCase()))
+
+  const brewerySearchObj = {
+    breweryQuery: breweryQuery
+  }
+
+  function onSearchClick() {
+    // console.log(newObj)
+    fetch('/brewery_search',{
+        method:'POST',
+        headers: {'Content-Type': 'application/json'},
+        body:JSON.stringify(brewerySearchObj)
+      })
+      .then(res => res.json())
+      .then(res => {console.log(res)})
+}
 
     return (
       <>
       {/* <!------- SEARCH BAR ---------> */}
 
       <br/>
-            <div class="container-fluid">
+        <div class="input-group" style={{"width": "50rem"}}>
+          <input 
+            type="search" 
+            class="form-control rounded" 
+            placeholder="Search Breweries" 
+            value={breweryQuery}
+            onChange={(e) => setBreweryQuery(e.target.value)}
+            aria-label="Search" 
+            aria-describedby="search-addon" 
+            />
+          <button type="button" class="btn btn-outline-primary" onClick={onSearchClick}>Search</button>
+        </div>
+
+            {/* <div class="container-fluid">
               <form class="d-flex input-group w-auto">
                 <input
                   type="search"
                   class="form-control rounded"
-                  placeholder="Search"
+                  placeholder="Brewery Search..."
                   aria-label="Search"
                   aria-describedby="search-addon"
+                  value={breweryQuery}
+                  onChange={(e)=> setBreweryQuery(e.target.value)}
                 />
                 <span class="input-group-text text-white border-0" id="search-addon">
                   <i class="fas fa-search"></i>
                 </span>
               </form>
-            </div>
+              <button type="button" class="btn btn-info" onClick={onSearchClick}>Info</button>
+            </div> */}
 
       <hr/>
         
@@ -34,9 +68,9 @@ function Breweries( {user} ) {
               <p className="mb-3">Discover your next great southern brew</p>
             </div>
             <BreweryConsumer>
-             {BreweryContext => 
+             {filteredBreweryArray => 
                  <>
-                     {BreweryContext.map(brewery=> (
+                     {filteredBreweryArray.map(brewery=> (
                          <BreweryCard brewery={brewery}/> )
                      )}
                  </>
