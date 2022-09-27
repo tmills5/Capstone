@@ -32,6 +32,10 @@ function App() {
       }
     })
   },[]);
+
+
+
+
   return (
 
     <div className="App">
@@ -43,7 +47,7 @@ function App() {
         <Route exact path='/logout' element={ <Logout /> } />
         <Route exact path='/signup' element={ <Signup setUser={setUser} /> } />
         <Route exact path='/breweries' element={ <Breweries user={user} /> } />
-        <Route exact path='/breweries/:id' element={ <BreweryShowDetail />} />
+        <Route exact path='/breweries/:id' element={ <BreweryShowDetail user={user}/>} />
         <Route exact path='/users/:id' element={ <UserProfile /> } />
         <Route exact path='/users/:id/edit' element={ <EditUserProfile /> } />
 

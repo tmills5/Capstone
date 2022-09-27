@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { useParams} from 'react-router-dom';
 
-function BreweryShowDetail() {
+function BreweryShowDetail( {user} ) {
   const [brewery, setBrewery] = useState({})
+  const [commentsArray, setCommentsArray] = useState([])
+  const [newComment, setNewComment] = useState('');
+
   const params = useParams();
-  const { name, brewery_type, street, city, state, phone, website_url, image_url } = brewery 
+  const { id, name, brewery_type, street, city, state, phone, website_url, image_url } = brewery 
+console.log(commentsArray)
+console.log(id)
+
+
 
   useEffect(()=>{
     fetch(`/breweries/${params.id}`)
@@ -12,8 +19,49 @@ function BreweryShowDetail() {
         .then(data => {
    console.log(data)
     setBrewery(data)
+    setCommentsArray(data.comments)
     })
-},[params.id])
+  },[params.id])
+
+  const postCommentSubmit = (e) => {
+    e.preventDefault()
+
+    let newBrewComment = {
+      comment_body: newComment,
+      user_id: user.id,
+      brewery_id: id
+    }
+
+    fetch("/comments", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-type": "application/json",
+    },
+    body: JSON.stringify(newBrewComment)
+    })
+    .then(r=>r.json())
+    .then(newBrewComment => {
+      setCommentsArray([...commentsArray, newBrewComment ])
+      console.log(newBrewComment)
+      setNewComment("")
+
+    })
+  };
+
+  const deleteComment = (id) => {
+    const updatedComments = commentsArray.filter((comment) => comment.id !== id);
+    setCommentsArray(updatedComments);
+  };
+
+   const adminDeleteComment = () => {
+    deleteComment(id)
+    fetch(`/breweries/${params.id}/comments/${id}`, {
+      method: "DELETE",
+    })
+   }
+
+
 
     return (
       <>
@@ -34,8 +82,9 @@ function BreweryShowDetail() {
           <div className=" mb-4">
             {/* <!--Section: Post data-mdb--> */}
             <section className="border-bottom mb-4">
-              <img src={image_url}
-                className="img-fluid shadow-2-strong rounded-5 mb-4" alt="" />
+              <img 
+                src={image_url} 
+                className="thumbnail shadow-2-strong rounded-5 mb-4" alt="" />
   
               <div className="row align-items-center mb-4">
                 <div className="col-lg-6 text-center text-lg-start mb-3 m-lg-0">
@@ -49,42 +98,13 @@ function BreweryShowDetail() {
                   <p>{state}</p>
                   <p>{phone}</p>
                 </div>
-{/*   
-                <div className="col-lg-6 text-center text-lg-end">
-                  <button type="button" className="btn btn-primary px-3 me-1" style={{"backgroundColor-color": "#3b5998"}}>
-                    <i className="fab fa-facebook-f"></i>
-                  </button>
-                  <button type="button" className="btn btn-primary px-3 me-1" style={{"backgroundColor-color": "#55acee"}}>
-                    <i className="fab fa-twitter"></i>
-                  </button>
-                  <button type="button" className="btn btn-primary px-3 me-1" style={{"backgroundColor-color": "#0082ca"}}>
-                    <i className="fab fa-linkedin"></i>
-                  </button>
-                  <button type="button" className="btn btn-primary px-3 me-1">
-                    <i className="fas fa-comments"></i>
-                  </button>
-                </div> */}
               </div>
             </section>
             {/* <!--Section: Post data-mdb--> */}
   
             {/* <!--Section: Text--> */}
-            <section>
-
-            </section>
-            {/* <!--Section: Text--> */}
-  
-            {/* <!--Section: Share buttons--> */}
-            <section className="text-center border-top border-bottom py-4 mb-4">
-              <p><strong>Share with your friends:</strong></p>
-  
-              <button type="button" className="btn btn-primary me-1">
-                <i className="fas fa-comments me-2"></i>Add comment
-              </button>
-            </section>
-            {/* <!--Section: Share buttons--> */}
-  
-            {/* <!--Section: Author--> */}
+      
+            {/* <!--Section: About--> */}
             <section className="border-bottom mb-4 pb-4">
               <div className="row">
                 <div className="col-3">
@@ -93,79 +113,81 @@ function BreweryShowDetail() {
                 </div>
   
                 <div className="col-9">
-                  <p className="mb-2"><strong>Anna Maria Doe</strong></p>
+                  <p className="mb-2"><strong>About</strong></p>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio est ab iure
+                    inventore dolorum consectetur? Molestiae aperiam atque quasi consequatur aut?
+                    Repellendus alias dolor ad nam, soluta distinctio quis accusantium!
+                  </p>
+                </div>
+              </div>
+            </section>
+            {/* <!--Section: About--> */}
 
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio est ab iure
-                    inventore dolorum consectetur? Molestiae aperiam atque quasi consequatur aut?
-                    Repellendus alias dolor ad nam, soluta distinctio quis accusantium!
-                  </p>
-                </div>
-              </div>
-            </section>
-            {/* <!--Section: Author--> */}
+            {/* <!--Section: Text--> */}
   
             {/* <!--Section: Comments--> */}
-            <section className="border-bottom mb-3">
-              <p className="text-center"><strong>Comments: 3</strong></p>
-  
-              {/* <!-- Comment --> */}
-              <div className="row mb-4">
-                <div className="col-2">
-                  <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(24).jpg"
-                    className="img-fluid shadow-1-strong rounded-5" alt="" />
-                </div>
-  
-                <div className="col-10">
-                  <p className="mb-2"><strong>Marta Dolores</strong></p>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio est ab iure
-                    inventore dolorum consectetur? Molestiae aperiam atque quasi consequatur aut?
-                    Repellendus alias dolor ad nam, soluta distinctio quis accusantium!
-                  </p>
-                </div>
+            <section className="text-center border-top border-bottom py-4 mb-4">
+            <div class="row d-flex justify-content-center">
+  <div class="col-md-8 col-lg-6">
+    <div class="card shadow-0 border" style={{"backgroundColor": "#f0f2f5"}}>
+      <div class="card-body p-4">
+        <div class="form-outline mb-4">
+          <form  onSubmit={postCommentSubmit}>
+          <input 
+            type="text" 
+            id="addANote" 
+            class="form-control" 
+            placeholder="Type comment..."
+            
+            value={newComment}
+            onChange={(e)=> setNewComment(e.target.value)}
+            />
+          <label class="form-label" for="addANote">+ Add a note</label>
+          </form>
+        </div>
+
+        
+          {commentsArray.map(comment=> (
+            <div class="card mb-4">
+                      <div class="card-body" key={comment.id}>
+            <p>{comment.comment_body}</p>
+            <div class="d-flex justify-content-between">
+              <div class="d-flex flex-row align-items-center">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(4).webp" alt="avatar" width="25"
+                  height="25" />
+                <p class="small mb-0 ms-2">{comment.commenter_name}</p>
               </div>
-  
-              {/* <!-- Comment --> */}
-              <div className="row mb-4">
-                <div className="col-2">
-                  <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(25).jpg"
-                    className="img-fluid shadow-1-strong rounded-5" alt="" />
-                </div>
-  
-                <div className="col-10">
-                  <p className="mb-2"><strong>Valeria Groove</strong></p>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio est ab iure
-                    inventore dolorum consectetur? Molestiae aperiam atque quasi consequatur aut?
-                    Repellendus alias dolor ad nam, soluta distinctio quis accusantium!
-                  </p>
-                </div>
-              </div>
-  
-              {/* <!-- Comment --> */}
-              <div className="row mb-4">
-                <div className="col-2">
-                  <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(26).jpg"
-                    className="img-fluid shadow-1-strong rounded-5" alt="" />
-                </div>
-  
-                <div className="col-10">
-                  <p className="mb-2"><strong>Antonia Velez</strong></p>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio est ab iure
-                    inventore dolorum consectetur? Molestiae aperiam atque quasi consequatur aut?
-                    Repellendus alias dolor ad nam, soluta distinctio quis accusantium!
-                  </p>
-                </div>
-              </div>
+              {user.is_admin ? 
+                <button type="button" class="btn btn-info btn-sm btn-floating" onClick={adminDeleteComment}>
+                  <i class="far fa-trash-alt"></i>
+                </button>
+                :
+                ''
+              }
+
+            </div>
+          </div>
+          </div>
+          ))}
+
+
+        
+
+      </div>
+    </div>
+  </div>
+  </div>
             </section>
-            {/* <!--Section: Comments--> */}
   
+
+  
+
+
             {/* <!--Section: Reply--> */}
             <section>
 
-  
+            
             </section>
             {/* <!--Section: Reply--> */}
           </div>
@@ -191,6 +213,43 @@ function BreweryShowDetail() {
 } 
 
 export default BreweryShowDetail;
+
+
+
+
+// <>
+// {/* <!--Section: Comments--> */}
+// <section className="border-bottom mb-3">
+// {/* <p className="text-center"><strong>Comments: </strong></p> */}
+  
+ 
+
+//   {/* <!-- Comment --> */}
+//   <div className="row mb-4">
+// {commentsArray.map(comment=> (
+// <>               
+//     <div className="col-2">
+
+//       <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(24).jpg"
+//         className="img-fluid shadow-1-strong rounded-5" alt="" />
+//     </div>
+
+//     <div className="col-10">
+      
+//       <p>
+//         {comment.comment_body}
+//         <p className="mb-2"><strong>-name</strong></p>
+//       </p> 
+//     </div>  
+// </>              
+// ))}                  
+    
+//   </div>
+
+
+// </section>
+// {/* <!--Section: Comments--> */}
+// </>
 
 
 // const [brewery, setBrewery] = useState({})
@@ -252,3 +311,42 @@ export default BreweryShowDetail;
 // </div>
 // </div>
 // </div>
+
+
+
+
+              
+  
+              // {/* <!-- Comment --> */}
+              // <div className="row mb-4">
+              //   <div className="col-2">
+              //     <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(25).jpg"
+              //       className="img-fluid shadow-1-strong rounded-5" alt="" />
+              //   </div>
+  
+              //   <div className="col-10">
+              //     <p className="mb-2"><strong>Valeria Groove</strong></p>
+              //     <p>
+              //       Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio est ab iure
+              //       inventore dolorum consectetur? Molestiae aperiam atque quasi consequatur aut?
+              //       Repellendus alias dolor ad nam, soluta distinctio quis accusantium!
+              //     </p>
+              //   </div>
+              // </div>
+  
+              // {/* <!-- Comment --> */}
+              // <div className="row mb-4">
+              //   <div className="col-2">
+              //     <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(26).jpg"
+              //       className="img-fluid shadow-1-strong rounded-5" alt="" />
+              //   </div>
+  
+              //   <div className="col-10">
+              //     <p className="mb-2"><strong>Antonia Velez</strong></p>
+              //     <p>
+              //       Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio est ab iure
+              //       inventore dolorum consectetur? Molestiae aperiam atque quasi consequatur aut?
+              //       Repellendus alias dolor ad nam, soluta distinctio quis accusantium!
+              //     </p>
+              //   </div>
+              // </div> 

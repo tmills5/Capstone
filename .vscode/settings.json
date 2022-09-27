@@ -5,6 +5,7 @@
         "labelledby",
         "Lastname",
         "nofollow",
-        "noreferrer"
+        "noreferrer",
+        "unauth"
     ]
 }

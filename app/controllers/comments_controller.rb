@@ -22,15 +22,14 @@ class CommentsController < ApplicationController
     end
 
     def create
+        # byebug
         comment = Comment.create!(comment_params)
         render json: comment, status: :created
     end
 
-    def update
-
-    end
 
     def destroy
+        # brewery = Brewery.find(params[:brewery_id])
         comment = Comment.find(params[:id])
         if comment
             comment.destroy
