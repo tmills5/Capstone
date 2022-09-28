@@ -6,6 +6,8 @@
         "Lastname",
         "nofollow",
         "noreferrer",
-        "unauth"
+        "Signup",
+        "unauth",
+        "userprofile"
     ]
 }

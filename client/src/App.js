@@ -11,7 +11,7 @@ import UserProfile from './components/UserProfile';
 import EditUserProfile from './components/EditUserProfile';
 import Login from './components/Login';
 import Logout from './components/Logout';
-import Signup from './components/Signup';
+import SignUp from './components/SignUp';
 import Footer from './components/Footer';
 
 function App() {
@@ -45,11 +45,11 @@ function App() {
         <Route exact path='/' element={ <LandingPage  errors={errors} setErrors={setErrors} /> } />
         <Route exact path='/login' element={ <Login  user={user} setUser={setUser} navigate={navigate} /> } />
         <Route exact path='/logout' element={ <Logout /> } />
-        <Route exact path='/signup' element={ <Signup setUser={setUser} /> } />
+        <Route exact path='/signup' element={ <SignUp setUser={setUser} /> } />
         <Route exact path='/breweries' element={ <Breweries user={user} /> } />
         <Route exact path='/breweries/:id' element={ <BreweryShowDetail user={user}/>} />
-        <Route exact path='/users/:id' element={ <UserProfile /> } />
-        <Route exact path='/users/:id/edit' element={ <EditUserProfile /> } />
+        <Route exact path='/users/:id' element={ <UserProfile user={user} navigate={navigate}/> } />
+        <Route exact path='/users/:id/edit' element={ <EditUserProfile user={user} setUser={setUser}/> } />
 
         
       </Routes>

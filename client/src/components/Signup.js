@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 
-function Signup( {setUser} ) {
-  const [email, setEmail] = useState('')
-  const [username, setUsername] = useState('')
-  const [userFirstName, setUserFirstName] = useState('')
-  const [userLastName, setUserLastName] = useState('')
-  const [password, setPassword] = useState('')
-  const [errors, setErrors] = useState([])
+function SignUp( {setUser} ) {
+  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
+  const [userFirstName, setUserFirstName] = useState('');
+  const [userLastName, setUserLastName] = useState('');
+  const [avatar, setAvatar] = useState('');
+  const [password, setPassword] = useState('');
+  const [errors, setErrors] = useState([]);
 
-   function onSubmit(e){
+  function onSubmit(e) {
     e.preventDefault()
 
       let user = {
@@ -16,6 +17,7 @@ function Signup( {setUser} ) {
         username: username,
         first_name: userFirstName,
         last_name: userLastName,
+        avatar: avatar,
         password
       }
      
@@ -35,16 +37,13 @@ function Signup( {setUser} ) {
       setUsername('');
       setUserFirstName('');
       setUserLastName('');
+      setAvatar('');
       setPassword('');
   }
 
-    return (
-    <>
-              {/* <!--Main Navigation--> */}
-        <header>
-
-     {/* <!-- Background image --> */}
-    <div id="intro" className="bg-image shadow-2-strong">
+  return (
+  <>
+    <div id="signup-intro" className="bg-image shadow-2-strong">
       <div className="mask d-flex align-items-center h-100" style={{"backgroundColor": "rgba(0, 0, 0, 0.8)"}}>
         <div className="container">
           <div className="row justify-content-center">
@@ -59,17 +58,22 @@ function Signup( {setUser} ) {
                 {/* <!-- First name input --> */}
                 <div className="form-outline mb-4">
                   <input type="text" id="form1ExampleFirst" className="form-control" value={userFirstName} onChange={(e) => setUserFirstName(e.target.value)}/>
-                  <label className="form-label" htmlFor="form1Example1">Username</label>
+                  <label className="form-label" htmlFor="form1Example1">First Name</label>
                 </div>
                 {/* <!-- Last name input -->  */}
                 <div className="form-outline mb-4">
                   <input type="text" id="form1ExampleLast" className="form-control" value={userLastName} onChange={(e) => setUserLastName(e.target.value)}/>
-                  <label className="form-label" htmlFor="form1Example1">Username</label>
+                  <label className="form-label" htmlFor="form1Example1">Last Name</label>
                 </div>
                 {/* <!-- Username input --> */}
                 <div className="form-outline mb-4">
                   <input type="text" id="form1ExampleUser" className="form-control" value={username} onChange={(e) => setUsername(e.target.value)}/>
                   <label className="form-label" htmlFor="form1Example1">Username</label>
+                </div>
+                {/* <!-- Avatar input --> */}
+                <div className="form-outline mb-4">
+                  <input type="text" id="form1ExampleUser" className="form-control" value={avatar} onChange={(e) => setAvatar(e.target.value)}/>
+                  <label className="form-label" htmlFor="form1Example1">Avatar</label>
                 </div>
 
                 {/* <!-- Password input --> */}
@@ -77,15 +81,6 @@ function Signup( {setUser} ) {
                   <input type="password" id="form1ExamplePW" className="form-control" value={password} onChange={(e) => setPassword(e.target.value)}/>
                   <label className="form-label" htmlFor="form1Example2">Password</label>
                 </div>
-
-                {/* <!-- 2 column grid layout for inline styling --> */}
-                {/* <div className="row mb-4">
-                  <div className="col d-flex justify-content-center">
-                  </div>
-                </div> */}
-
-                {/* <!-- Submit button --> */}
-                
                 <hr/>
                 <button type="submit" className="btn btn-primary btn-block" onClick={onSubmit}>Sign Up</button>
               </form>
@@ -94,14 +89,11 @@ function Signup( {setUser} ) {
         </div>
       </div>
     </div>
-     {/* <!-- Background image --> */}
-  </header>
-  {/* <!--Main Navigation--> */}
-    </>
+  </>
     )
 };
 
-export default Signup;
+export default SignUp;
 
 
 

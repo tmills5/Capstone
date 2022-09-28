@@ -9,7 +9,6 @@ function BreweryShowDetail( {user} ) {
   const params = useParams();
   const { id, name, brewery_type, street, city, state, phone, website_url, image_url } = brewery 
 console.log(commentsArray)
-console.log(id)
 
 
 
@@ -49,31 +48,29 @@ console.log(id)
     })
   };
 
-  const deleteComment = (id) => {
-    const updatedComments = commentsArray.filter((comment) => comment.id !== id);
-    setCommentsArray(updatedComments);
-  };
 
-   const adminDeleteComment = () => {
-    deleteComment(id)
-    fetch(`/breweries/${params.id}/comments/${id}`, {
+
+
+
+   const adminDeleteComment = (commentId) => {
+    fetch(`/comments/${commentId}`, {
       method: "DELETE",
-    })
+   }).then(()=> {
+    let updatedCommentsArray = commentsArray.filter((comment) => comment.id !== commentId)
+    setCommentsArray(updatedCommentsArray)
+   })
    }
 
-
-
     return (
-      <>
+      <div className="h-100 gradient-custom-2">
       {/* <!-- Jumbotron --> */}
       <div id="intro" className="p-5 text-center bg-light">
         <h1 className="mb-0 h4">{name}</h1>
       </div>
       {/* <!-- Jumbotron --> */}
-  
-    {/* <!--Main Navigation--> */}
-  {/* 
-    <!--Main layout--> */}
+
+   
+    {/* <!--Main layout--> */}
     <main className="mt-4 mb-5">
       <div className="container">
         {/* <!--Grid row--> */}
@@ -122,9 +119,6 @@ console.log(id)
                 </div>
               </div>
             </section>
-            {/* <!--Section: About--> */}
-
-            {/* <!--Section: Text--> */}
   
             {/* <!--Section: Comments--> */}
             <section className="text-center border-top border-bottom py-4 mb-4">
@@ -149,17 +143,18 @@ console.log(id)
 
         
           {commentsArray.map(comment=> (
+
             <div class="card mb-4">
                       <div class="card-body" key={comment.id}>
             <p>{comment.comment_body}</p>
             <div class="d-flex justify-content-between">
               <div class="d-flex flex-row align-items-center">
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(4).webp" alt="avatar" width="25"
+                <img src={comment.commenter_avatar || "https://img.freepik.com/premium-photo/funny-gorilla-drinking-beer-bar-illustration_691560-326.jpg?size=338&ext=jpg&ga=GA1.2.2004300630.1664376118"} alt="avatar" width="25"
                   height="25" />
                 <p class="small mb-0 ms-2">{comment.commenter_name}</p>
               </div>
               {user.is_admin ? 
-                <button type="button" class="btn btn-info btn-sm btn-floating" onClick={adminDeleteComment}>
+                <button type="button" class="btn btn-info btn-sm btn-floating" onClick={()=> adminDeleteComment(comment.id)}>
                   <i class="far fa-trash-alt"></i>
                 </button>
                 :
@@ -208,7 +203,7 @@ console.log(id)
       </div>
     </main>
     {/* <!--Main layout--> */}
-    </>
+    </div>
     )
 } 
 

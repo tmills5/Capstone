@@ -51,7 +51,8 @@ ActiveRecord::Schema.define(version: 2022_09_26_163532) do
     t.string "first_name"
     t.string "last_name"
     t.string "username"
-    t.boolean "is_admin"
+    t.string "avatar"
+    t.boolean "is_admin", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

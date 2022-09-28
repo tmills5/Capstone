@@ -13,6 +13,7 @@ User.create(
   first_name: "Tyson",
   last_name: "Mills",
   username: "tyty",
+  avatar: "https://yt3.ggpht.com/3BkBY3V585eOLW10tD3fBoS8WfxkqNhSU0mMxKff_urLGxATrlGlzQHm7D5_YRjEGevjdrjShQ=s600-c-k-c0x00ffffff-no-rj-rp-mo",
   is_admin: "true"
 )
 
@@ -23,6 +24,7 @@ User.create(
       first_name: Faker::Name.first_name,
       last_name: Faker::Name.last_name,
       username: Faker::Internet.username,
+      avatar: Faker::Avatar.image,
       is_admin: false
     )
   end
