@@ -105,3 +105,9 @@
   .navbar .nav-link {
     color: #fff !important;
   }
+
+  /* ---------------------Brewery Show Detail------------------- */
+
+  .address-line {
+    margin: 0;
+  }

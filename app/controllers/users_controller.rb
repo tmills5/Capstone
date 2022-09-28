@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     def update
         current_user = User.find_by!(id: session[:current_user])
         current_user.update(user_params)
-        render json: current_user
+        render json: current_user, status: :accepted
     end
 
     def destroy

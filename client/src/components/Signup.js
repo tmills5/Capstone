@@ -72,7 +72,7 @@ function SignUp( {setUser} ) {
                 </div>
                 {/* <!-- Avatar input --> */}
                 <div className="form-outline mb-4">
-                  <input type="text" id="form1ExampleUser" className="form-control" value={avatar} onChange={(e) => setAvatar(e.target.value)}/>
+                  <input type="text" id="form1ExampleAv" className="form-control" value={avatar} onChange={(e) => setAvatar(e.target.value)}/>
                   <label className="form-label" htmlFor="form1Example1">Avatar</label>
                 </div>
 

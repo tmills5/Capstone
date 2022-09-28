@@ -19,9 +19,7 @@ function Logout() {
                   <p>We're working hard to keep the site updated.</p>
       
                   <p>If you would like to submit other breweries, let the staff know!</p>
-      
-                  <a className="btn btn-outline-light btn-lg m-2" href="/" role="button"
-                    rel="nofollow">Mention a new brewery</a>
+    
                   <a className="btn btn-outline-light btn-lg m-2" href="/" role="button">Home</a>
                 </div>
               </div>

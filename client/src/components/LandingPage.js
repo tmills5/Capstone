@@ -29,7 +29,6 @@ function LandingPage( {errors, setErrors} ) {
       })
       console.log(errors)
       
-      
       setSubscriberFirstName('');
       setSubscriberLastName('');
       setSubscriberEmail('')

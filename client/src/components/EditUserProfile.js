@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {Link} from 'react-router-dom';
 
-function EditUserProfile( {user, setUser} ) {
+function EditUserProfile( {user, setUser, navigate} ) {
     const [formData, setFormData] = useState('')
     const [errors, setErrors] = useState([])
 
@@ -31,8 +31,17 @@ console.log(user)
         if(userUpdatedJson.errors) setErrors(Object.entries(userUpdatedJson.errors))
       })
       console.log(errors)
+    }
 
-  }
+    const handleDeleteUserAcct = (id) => {
+        fetch(`/users/${id}`, {
+            method: 'DELETE',
+            headers: {'Accept' : 'application/json'}
+          })
+          .then(()=> {setUser()})
+          navigate('/')
+    }
+
 
     return (
     <>
@@ -76,20 +85,16 @@ console.log(user)
                 <div className="form-outline mb-4">
                   <input type="password" id="form1ExamplePW" className="form-control" defaultValue={user.password} onChange={(e) => setFormData({...formData, password: e.target.value})}/>
                   <label className="form-label" htmlFor="form1Example2">Password</label>
+                  
                 </div>
 
-                {/* <!-- 2 column grid layout for inline styling --> */}
-                <div className="row mb-4">
-                  <div className="col d-flex justify-content-center">
-                  </div>
-                </div>
-
-                {/* <!-- Submit button --> */}
-                
-                <hr/>
-                <a href={`/users/${user.id}`}><input type="submit" value="Update"/></a>
+                {/* <hr/> */}
+                <a href={`/users/${user.id}`}><input type="submit" value="Update"/>
+                <span><Link to={`/users/${user.id}`}>cancel</Link></span></a>
                 <br/>
-                <Link to={`/users/${user.id}`}>cancel</Link>
+                <hr/>
+                <br/>
+                <button type="button" class="btn btn-outline-danger" data-mdb-ripple-color="dark" onClick={handleDeleteUserAcct}>Delete Account</button>
               </form>
             </div>
           </div>

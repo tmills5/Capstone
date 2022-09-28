@@ -40,35 +40,35 @@ function Login( {setUser, navigate} ) {
         <header>
 
      {/* <!-- Background image --> */}
-    <div id="login-intro" class="bg-image shadow-2-strong">
-      <div class="mask d-flex align-items-center h-100" style={{"background-color": "rgba(0, 0, 0, 0.8)"}}>
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-xl-5 col-md-8">
-              <form class="bg-white  rounded-5 shadow-5-strong p-5">
+    <div id="login-intro" className="bg-image shadow-2-strong">
+      <div className="mask d-flex align-items-center h-100" style={{"backgroundColor": "rgba(0, 0, 0, 0.8)"}}>
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-xl-5 col-md-8">
+              <form className="bg-white  rounded-5 shadow-5-strong p-5">
                 <h4>Welcome Back...</h4>
                 {/* <!-- Username input --> */}
-                <div class="form-outline mb-4">
-                  <input type="text" id="form1Example1" class="form-control" value={username} onChange={(e) => setUsername(e.target.value)} />
-                  <label class="form-label" for="form1Example1">Username</label>
+                <div className="form-outline mb-4">
+                  <input type="text" id="form1Example1" className="form-control" value={username} onChange={(e) => setUsername(e.target.value)} />
+                  <label className="form-label" htmlFor="form1Example1">Username</label>
                 </div>
 
                 {/* <!-- Password input --> */}
-                <div class="form-outline mb-4">
-                  <input type="password" id="form1Example2" class="form-control" value={password} onChange={(e) => setPassword(e.target.value)} />
-                  <label class="form-label" for="form1Example2">Password</label>
+                <div className="form-outline mb-4">
+                  <input type="password" id="form1Example2" className="form-control" value={password} onChange={(e) => setPassword(e.target.value)} />
+                  <label className="form-label" htmlFor="form1Example2">Password</label>
                 </div>
 
                 {/* <!-- 2 column grid layout for inline styling --> */}
-                {/* <div class="row mb-4">
-                  <div class="col d-flex justify-content-center">
+                {/* <div className="row mb-4">
+                  <div className="col d-flex justify-content-center">
                   </div>
                 </div> */}
 
                 {/* <!-- Submit button --> */}
-                <button type="submit" class="btn btn-primary btn-block" onClick={onLoginSubmit}>Sign in</button>
+                <button type="submit" className="btn btn-primary btn-block" onClick={onLoginSubmit}>Sign in</button>
                 <hr/>
-                <div class="col text-center">
+                <div className="col text-center">
                   {/* <!-- Simple link --> */}
                   <a href="/signup">...or sign up</a>
                 </div>
