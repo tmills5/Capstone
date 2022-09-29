@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { MDBInput } from 'mdb-react-ui-kit';
+import { MDBInput, MDBModal } from 'mdb-react-ui-kit';
 import {Link} from 'react-router-dom';
 
 function EditUserProfile( {user, setUser, navigate} ) {
-    const [formData, setFormData] = useState('')
+    const [formData, setFormData] = useState({user});
+
     const [errors, setErrors] = useState([])
 
 console.log(user)
@@ -14,8 +15,8 @@ console.log(user)
       let user = {
         email: formData.email,
         username: formData.username,
-        first_name: formData.userFirstName,
-        last_name: formData.userLastName,
+        first_name: formData.first_name,
+        last_name: formData.last_name,
         avatar: formData.avatar,
         password: formData.password
       }
@@ -59,36 +60,41 @@ console.log(user)
                 <h4>Update Your Profile...</h4>
               {/* <!-- Email input --> */}
                 <div className="form-outline mb-4">
-                  <MDBInput label="Email" type="email" defaultValue={user.email} onChange={(e) => setFormData({...formData, email: e.target.value})} />
+                  <MDBInput label="Email" type="email" value={user.email || ''} onChange={(e) => setFormData({...formData, email: e.target.value})} />
                 </div>
                 {/* <!-- First name input --> */}
                 <div className="form-outline mb-4">
-                  <MDBInput label="First Name" type="text" defaultValue={user.first_name} onChange={(e) => setFormData({...formData, first_name: e.target.value})}/>
+                  <MDBInput label="First Name" type="text" value={user.first_name || ''} onChange={(e) => setFormData({...formData, first_name: e.target.value})}/>
                 </div>
                 {/* <!-- Last name input -->  */}
                 <div className="form-outline mb-4">
-                  <MDBInput label="Last Name" type="text" defaultValue={user.last_name} onChange={(e) => setFormData({...formData, last_name: e.target.value})}/>
+                  <MDBInput label="Last Name" type="text" value={user.last_name || ''} onChange={(e) => setFormData({...formData, last_name: e.target.value})}/>
                 </div>
                 {/* <!-- Username input --> */}
                 <div className="form-outline mb-4">
-                  <MDBInput label="Username" type="text" defaultValue={user.username} onChange={(e) => setFormData({...formData, username: e.target.value})}/>
+                  <MDBInput label="Username" type="text" value={user.username || ''} onChange={(e) => setFormData({...formData, username: e.target.value})}/>
                 </div>
                 {/* <!-- Avatar input --> */}
                 <div className="form-outline mb-4">
-                  <MDBInput label="Avatar" type="text" defaultValue={user.avatar} onChange={(e) => setFormData({...formData, avatar: e.target.value})}/>
+                  <MDBInput label="Avatar" type="text" value={user.avatar || ''} onChange={(e) => setFormData({...formData, avatar: e.target.value})}/>
                 </div>
                 {/* <!-- Password input --> */}
                 <div className="form-outline mb-4">
-                  <MDBInput label="Password" type="current-password" defaultValue={user.password} onChange={(e) => setFormData({...formData, password: e.target.value})}/>
+                  <MDBInput label="Password" type="current-password" value={user.password || ''} onChange={(e) => setFormData({...formData, password: e.target.value})}/>
                 </div>
 
                 {/* <hr/> */}
-                <a href={`/users/${user.id}`}><input type="submit" value="Update" />
-                <span><Link to={`/users/${user.id}`}>cancel</Link></span></a>
+                <input type="submit" value="Update" />
+                <span><Link to={`/users/${user.id}`}>cancel</Link></span>
                 <br/>
                 <hr/>
                 <br/>
-                <button type="button" class="btn btn-outline-danger" data-mdb-ripple-color="dark" onClick={handleDeleteUserAcct}>Delete Account</button>
+                <button 
+                  type="button" 
+                  className="btn btn-outline-danger" 
+                  data-mdb-ripple-color="dark" 
+                  onClick={handleDeleteUserAcct}
+                  >Delete Account</button>
               </form>
             </div>
           </div>
@@ -103,68 +109,3 @@ console.log(user)
 };
 
 export default EditUserProfile;
-
-
-
-
-
-// import React, { useState } from "react";
-
-
-// function Signup( {setUser} ) {
-//   const [email, setEmail] = useState('')
-//   const [username, setUsername] = useState('')
-//   const [password, setPassword] = useState('')
-//   const [errors, setErrors] = useState([])
-  
-
-//   function onSubmit(e){
-//     e.preventDefault()
-
-//       let user = {
-//         email: email,
-//         username: username,
-//         password
-//       }
-     
-//       fetch(`/users`,{
-//         method:'POST',
-//         headers:{'Content-Type': 'application/json'},
-//         body:JSON.stringify(user)
-//       })
-//       .then(res => res.json())
-//       .then(userEnteredJson => {
-//         console.log(userEnteredJson)
-//         setUser(userEnteredJson)
-//         if(userEnteredJson.errors) setErrors(Object.entries(userEnteredJson.errors))
-//       })
-//       console.log(errors)
-//       setEmail('')
-//       setUsername('');
-//       setPassword('');
-//   }
-
-//   return (
-//     <div classNameName="container is-fluid">
-//       <div classNameName="notification is-primary">
-//         <h1>Sign Up!!</h1>
-//         <form onSubmit={onSubmit} >
-//           <input type="text" placeholder="Email..." value={email} onChange={(e) => setEmail(e.target.value)} />
-//           <input type="text" placeholder="Username..." value={username} onChange={(e) => setUsername(e.target.value)} />
-//           <input type="password" placeholder="Password..." value={password} onChange={(e) => setPassword(e.target.value)} />
-//           <input type="submit" value="Sign up!" />
-//         </form>
-//         {errors.length > 0 && (
-//           <ul style={{ color: "red" }}>
-//             {errors.map((error) => (
-//               <li key={error}>{error[1]}</li>
-//             ))}
-//           </ul>
-//         )}
-//       </div>
-//       <img src="https://images.pexels.com/photos/5055743/pexels-photo-5055743.jpeg?auto=compress&cs=tinysrgb&w=1600" alt='cheers'/>
-//     </div>
-//   )
-// }
-
-// export default Signup;
