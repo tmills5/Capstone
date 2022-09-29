@@ -1,12 +1,16 @@
 import React from 'react';
 // import { BreweryConsumer } from './context/BreweryContext';
+import {  MDBCard } from 'mdb-react-ui-kit';
 
 function BreweryCard( {brewery} ) {
   const { id, name, city, image_url } = brewery;
 
 
   return(
-<div className="card text-center">
+<>
+
+  <MDBCard className="card text-center">
+
   <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
     <img src={image_url} className="img-fluid" alt='brewery'/>
     <a href="#!">
@@ -20,7 +24,10 @@ function BreweryCard( {brewery} ) {
     <button type="button" className="btn btn-primary">More</button>
     </a>
   </div>
-</div>
+  
+  </MDBCard>
+  
+</>
   )
 };
 
