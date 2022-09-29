@@ -6,7 +6,7 @@ function BreweryCard( {brewery} ) {
 
 
   return(
-<div className="card text-center ">
+<div className="card text-center">
   <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
     <img src={image_url} className="img-fluid" alt='brewery'/>
     <a href="#!">

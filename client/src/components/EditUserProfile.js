@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { MDBInput } from 'mdb-react-ui-kit';
 import {Link} from 'react-router-dom';
 
 function EditUserProfile( {user, setUser, navigate} ) {
@@ -58,38 +59,31 @@ console.log(user)
                 <h4>Update Your Profile...</h4>
               {/* <!-- Email input --> */}
                 <div className="form-outline mb-4">
-                  <input type="email" id="form1Example" className="form-control" defaultValue={user.email} onChange={(e) => setFormData({...formData, email: e.target.value})} />
-                  <label className="form-label" htmlFor="form1Example1">Email address</label>
+                  <MDBInput label="Email" type="email" defaultValue={user.email} onChange={(e) => setFormData({...formData, email: e.target.value})} />
                 </div>
                 {/* <!-- First name input --> */}
                 <div className="form-outline mb-4">
-                  <input type="text" id="form1ExampleFirst" className="form-control" defaultValue={user.userFirstName} onChange={(e) => setFormData({...formData, first_name: e.target.value})}/>
-                  <label className="form-label" htmlFor="form1Example1">First Name</label>
+                  <MDBInput label="First Name" type="text" defaultValue={user.first_name} onChange={(e) => setFormData({...formData, first_name: e.target.value})}/>
                 </div>
                 {/* <!-- Last name input -->  */}
                 <div className="form-outline mb-4">
-                  <input type="text" id="form1ExampleLast" className="form-control" defaultValue={user.userLastName} onChange={(e) => setFormData({...formData, last_name: e.target.value})}/>
-                  <label className="form-label" htmlFor="form1Example1">Last Name</label>
+                  <MDBInput label="Last Name" type="text" defaultValue={user.last_name} onChange={(e) => setFormData({...formData, last_name: e.target.value})}/>
                 </div>
                 {/* <!-- Username input --> */}
                 <div className="form-outline mb-4">
-                  <input type="text" id="form1ExampleUser" className="form-control" defaultValue={user.username} onChange={(e) => setFormData({...formData, username: e.target.value})}/>
-                  <label className="form-label" htmlFor="form1Example1">Username</label>
+                  <MDBInput label="Username" type="text" defaultValue={user.username} onChange={(e) => setFormData({...formData, username: e.target.value})}/>
                 </div>
                 {/* <!-- Avatar input --> */}
                 <div className="form-outline mb-4">
-                  <input type="text" id="form1ExampleUser" className="form-control" defaultValue={user.avatar} onChange={(e) => setFormData({...formData, avatar: e.target.value})}/>
-                  <label className="form-label" htmlFor="form1Example1">Avatar</label>
+                  <MDBInput label="Avatar" type="text" defaultValue={user.avatar} onChange={(e) => setFormData({...formData, avatar: e.target.value})}/>
                 </div>
                 {/* <!-- Password input --> */}
                 <div className="form-outline mb-4">
-                  <input type="password" id="form1ExamplePW" className="form-control" defaultValue={user.password} onChange={(e) => setFormData({...formData, password: e.target.value})}/>
-                  <label className="form-label" htmlFor="form1Example2">Password</label>
-                  
+                  <MDBInput label="Password" type="current-password" defaultValue={user.password} onChange={(e) => setFormData({...formData, password: e.target.value})}/>
                 </div>
 
                 {/* <hr/> */}
-                <a href={`/users/${user.id}`}><input type="submit" value="Update"/>
+                <a href={`/users/${user.id}`}><input type="submit" value="Update" />
                 <span><Link to={`/users/${user.id}`}>cancel</Link></span></a>
                 <br/>
                 <hr/>

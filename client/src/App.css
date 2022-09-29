@@ -110,3 +110,8 @@
   .address-line {
     margin: 0;
   }
+
+  /* -----------------------Errors------------------------ */
+  ul {
+    list-style-type: none;
+  }

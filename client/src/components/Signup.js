@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { MDBInput } from 'mdb-react-ui-kit';
 
 function SignUp( {setUser} ) {
   const [email, setEmail] = useState('');
@@ -52,37 +53,37 @@ function SignUp( {setUser} ) {
                 <h4>Sign up to start exploring!</h4>
               {/* <!-- Email input --> */}
                 <div className="form-outline mb-4">
-                  <input type="email" id="form1Example" className="form-control" value={email} onChange={(e) => setEmail(e.target.value)}/>
-                  <label className="form-label" htmlFor="form1Example1">Email address</label>
+                  <MDBInput label="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
                 </div>
                 {/* <!-- First name input --> */}
                 <div className="form-outline mb-4">
-                  <input type="text" id="form1ExampleFirst" className="form-control" value={userFirstName} onChange={(e) => setUserFirstName(e.target.value)}/>
-                  <label className="form-label" htmlFor="form1Example1">First Name</label>
+                  <MDBInput label="First Name" type="text" value={userFirstName} onChange={(e) => setUserFirstName(e.target.value)}/>
                 </div>
                 {/* <!-- Last name input -->  */}
                 <div className="form-outline mb-4">
-                  <input type="text" id="form1ExampleLast" className="form-control" value={userLastName} onChange={(e) => setUserLastName(e.target.value)}/>
-                  <label className="form-label" htmlFor="form1Example1">Last Name</label>
+                  <MDBInput label="Last Name" type="text" value={userLastName} onChange={(e) => setUserLastName(e.target.value)}/>
                 </div>
                 {/* <!-- Username input --> */}
                 <div className="form-outline mb-4">
-                  <input type="text" id="form1ExampleUser" className="form-control" value={username} onChange={(e) => setUsername(e.target.value)}/>
-                  <label className="form-label" htmlFor="form1Example1">Username</label>
+                  <MDBInput label="Username" type="text" value={username} onChange={(e) => setUsername(e.target.value)}/>
                 </div>
                 {/* <!-- Avatar input --> */}
                 <div className="form-outline mb-4">
-                  <input type="text" id="form1ExampleAv" className="form-control" value={avatar} onChange={(e) => setAvatar(e.target.value)}/>
-                  <label className="form-label" htmlFor="form1Example1">Avatar</label>
+                  <MDBInput label="Avatar" type="text" value={avatar} onChange={(e) => setAvatar(e.target.value)}/>
                 </div>
-
                 {/* <!-- Password input --> */}
                 <div className="form-outline mb-4">
-                  <input type="password" id="form1ExamplePW" className="form-control" value={password} onChange={(e) => setPassword(e.target.value)}/>
-                  <label className="form-label" htmlFor="form1Example2">Password</label>
+                  <MDBInput label="Password" type="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
                 </div>
                 <hr/>
                 <button type="submit" className="btn btn-primary btn-block" onClick={onSubmit}>Sign Up</button>
+                 {errors.length > 0 && (
+                  <ul style={{ color: "red" }}>
+                  {errors.map((error) => (
+                  <li key={error}>{error[1]}</li>
+                  ))}
+                  </ul>
+                  )}
               </form>
             </div>
           </div>

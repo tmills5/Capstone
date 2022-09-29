@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { MDBInput } from 'mdb-react-ui-kit';
 
 function LandingPage( {errors, setErrors} ) {
   const [subscriberFirstname, setSubscriberFirstName] = useState('')
@@ -73,15 +73,11 @@ function LandingPage( {errors, setErrors} ) {
         <div className="col-md-6 gx-5 mb-4">
           <h4><strong>What we do here</strong></h4>
           <p className="text-muted">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis consequatur
-            eligendi quisquam doloremque vero ex debitis veritatis placeat unde animi laborum
-            sapiente illo possimus, commodi dignissimos obcaecati illum maiores corporis.
+            The Mississippi Brew House collects and manages the information for all the local breweries within the state od Mississippi. Ww want a place where you can come to explore all the great brews MIssissippi has to offer.
           </p>
           <p><strong>Who doesn't like good beer?</strong></p>
           <p className="text-muted">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod itaque voluptate
-            nesciunt laborum incidunt. Officia, quam consectetur. Earum eligendi aliquam illum
-            alias, unde optio accusantium soluta, iusto molestiae adipisci et?
+            This site is for the people that like to experience great beer with great friends. Login to start exploring or sign up if you wish to add comments!!
           </p>
         </div>
       </div>
@@ -164,29 +160,32 @@ function LandingPage( {errors, setErrors} ) {
             <div className="row mb-4">
               <div className="col">
                 <div className="form-outline">
-                  <input type="text" id="form3Example1" className="form-control" value={subscriberFirstname} onChange={(e) => setSubscriberFirstName(e.target.value)}/>
-                  <label className="form-label" htmlFor="form3Example1">First name</label>
+                  <MDBInput label="First Name"type="text" value={subscriberFirstname} onChange={(e) => setSubscriberFirstName(e.target.value)}/>
                 </div>
               </div>
               <div className="col">
                 <div className="form-outline">
-                  <input type="text" id="form3Example2" className="form-control" value={subscriberLastname} onChange={(e) => setSubscriberLastName(e.target.value)}/>
-                  <label className="form-label" htmlFor="form3Example2">Last name</label>
+                  <MDBInput label="Last Name" type="text" value={subscriberLastname} onChange={(e) => setSubscriberLastName(e.target.value)}/>
                 </div>
               </div>
             </div>
 
             {/* <!-- Email input --> */}
             <div className="form-outline mb-4">
-              <input type="email" id="form3Example3" className="form-control" value={subscriberEmail} onChange={(e) => setSubscriberEmail(e.target.value)}/>
-              <label className="form-label" htmlFor="form3Example3">Email address</label>
+              <MDBInput label="Email" type="email" value={subscriberEmail} onChange={(e) => setSubscriberEmail(e.target.value)}/>
             </div>
 
             {/* <!-- Submit button --> */}
             <button type="submit" className="btn btn-primary btn-block mb-4" onClick={newsletterSubmit}>
               Subscribe
             </button>
-            {<p style={{ color: "red" }}>{errors.map(error=> <li>{error}</li>)}</p>}
+            {errors.length > 0 && (
+            <ul style={{ color: "red" }}>
+            {errors.map((error) => (
+            <li key={error}>{error[1]}</li>
+            ))}
+            </ul>
+            )}
           </form>
         </div>
       </div>

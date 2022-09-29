@@ -8,7 +8,7 @@ function BreweryShowDetail( {user} ) {
 
   const params = useParams();
   const { id, name, brewery_type, street, city, state, phone, website_url, image_url } = brewery 
-  // console.log(commentsArray)
+  console.log(commentsArray)
 
   useEffect(()=>{
     fetch(`/breweries/${params.id}`)
@@ -131,7 +131,7 @@ function BreweryShowDetail( {user} ) {
                           <div className="d-flex justify-content-between">
                             <div className="d-flex flex-row align-items-center">
                               <img src={comment.commenter_avatar} alt="avatar" width="25" height="25" />
-                              <p className="small mb-0 ms-2">{comment.commenter_name}</p>
+                              <p className="small mb-0 ms-2">{comment.commenter_username}</p>
                             </div>
                             {user.is_admin ? 
                               <button type="button" className="btn btn-info btn-sm btn-floating" onClick={()=> adminDeleteComment(comment.id)}>

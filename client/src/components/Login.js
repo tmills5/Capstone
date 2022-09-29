@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { MDBInput } from 'mdb-react-ui-kit';
+
 
 function Login( {setUser, navigate} ) {
   const [username, setUsername] = useState('')
@@ -49,14 +51,14 @@ function Login( {setUser, navigate} ) {
                 <h4>Welcome Back...</h4>
                 {/* <!-- Username input --> */}
                 <div className="form-outline mb-4">
-                  <input type="text" id="form1Example1" className="form-control" value={username} onChange={(e) => setUsername(e.target.value)} />
-                  <label className="form-label" htmlFor="form1Example1">Username</label>
+                  <MDBInput label="Username" type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+    
                 </div>
 
                 {/* <!-- Password input --> */}
                 <div className="form-outline mb-4">
-                  <input type="password" id="form1Example2" className="form-control" value={password} onChange={(e) => setPassword(e.target.value)} />
-                  <label className="form-label" htmlFor="form1Example2">Password</label>
+                  <MDBInput label="Password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                  {/* <label className="form-label" htmlFor="form1Example2">Password</label> */}
                 </div>
 
                 {/* <!-- 2 column grid layout for inline styling --> */}
