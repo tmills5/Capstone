@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MDBInput, MDBModal } from 'mdb-react-ui-kit';
+import { MDBInput } from 'mdb-react-ui-kit';
 import {Link} from 'react-router-dom';
 
 function EditUserProfile( {user, setUser, navigate} ) {

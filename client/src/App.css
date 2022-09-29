@@ -92,8 +92,8 @@
   /* --------------------Edit User Profile------------------- */
   #edit-userprofile-intro {
     height: 100vh;
+    background-image: url('https://mdbootstrap.com/img/new/fluid/city/008.jpg');
   }
-  
   
     @media (min-width: 992px) {
     #intro {

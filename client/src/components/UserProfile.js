@@ -12,7 +12,7 @@ console.log(user)
         <div className="card">
           <div className="rounded-top text-white d-flex flex-row" style={{"backgroundColor": "#000", "height": "200px"}}>
             <div className="ms-4 mt-5 d-flex flex-column" style={{"width": "150px"}}>
-              <img src={user.avatar || "https://img.freepik.com/premium-photo/funny-gorilla-drinking-beer-bar-illustration_691560-326.jpg?size=338&ext=jpg&ga=GA1.2.2004300630.1664376118"}
+              <img src={user.avatar || "https://images.pexels.com/photos/52994/beer-ale-bitter-fermented-52994.jpeg?auto=compress&cs=tinysrgb&w=600"}
                 alt="Generic placeholder" className="img-fluid img-thumbnail mt-4 mb-2"
                 style={{"width": "150px", "zIndex": "1"}}/>
               <button type="button" className="btn btn-outline-dark" data-mdb-ripple-color="dark"

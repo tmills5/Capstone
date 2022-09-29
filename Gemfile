@@ -21,6 +21,8 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
 gem "rest-client"
 #hiding api keys
 gem 'figaro'
+# validate emails
+gem 'email_validator', '~> 2.2', '>= 2.2.3'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

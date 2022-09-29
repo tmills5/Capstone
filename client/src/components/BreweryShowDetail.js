@@ -128,7 +128,7 @@ function BreweryShowDetail( {user} ) {
                           <p>{comment.comment_body}</p>
                           <div className="d-flex justify-content-between">
                             <div className="d-flex flex-row align-items-center">
-                              <img src={comment.commenter_avatar} alt="avatar" width="25" height="25" />
+                              <img src={comment.commenter_avatar || "https://images.pexels.com/photos/1552630/pexels-photo-1552630.jpeg?auto=compress&cs=tinysrgb&w=600" } alt="" width="25" height="25" />
                               <p className="small mb-0 ms-2">{comment.commenter_username}</p>
                             </div>
                             {user.is_admin ? 
