@@ -3,6 +3,7 @@ class CreateBreweries < ActiveRecord::Migration[6.1]
     create_table :breweries do |t|
       t.string :name
       t.string :brewery_type
+      t.text :description
       t.string :street
       t.string :city
       t.string :state

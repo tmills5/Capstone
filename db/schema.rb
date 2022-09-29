@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2022_09_26_163532) do
   create_table "breweries", force: :cascade do |t|
     t.string "name"
     t.string "brewery_type"
+    t.text "description"
     t.string "street"
     t.string "city"
     t.string "state"

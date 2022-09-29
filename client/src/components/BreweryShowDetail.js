@@ -7,7 +7,7 @@ function BreweryShowDetail( {user} ) {
   const [newComment, setNewComment] = useState('');
 
   const params = useParams();
-  const { id, name, brewery_type, street, city, state, phone, website_url, image_url } = brewery 
+  const { id, name, brewery_type, description, street, city, state, phone, website_url, image_url } = brewery 
   console.log(commentsArray)
 
   useEffect(()=>{
@@ -96,9 +96,7 @@ function BreweryShowDetail( {user} ) {
                 <div className="col-9">
                   <p className="mb-2"><strong>About</strong></p>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio est ab iure
-                    inventore dolorum consectetur? Molestiae aperiam atque quasi consequatur aut?
-                    Repellendus alias dolor ad nam, soluta distinctio quis accusantium!
+                    {description}
                   </p>
                 </div>
               </div>

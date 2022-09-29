@@ -31,31 +31,11 @@ User.create(
 
 puts "Seeding Breweries...------------------------"
 
-# def brewery_dataset
-#     response = RestClient.get('https://api.openbrewerydb.org/breweries?by_state=mississippi&per_page=50', headers: {'Content-Type': 'application/json'})
-#     json = JSON.parse(response)
-  
-#     json.each do |brewery|
-#       Brewery.create!(
-#         name: brewery["name"],
-#         brewery_type: brewery["brewery_type"],
-#         street: brewery["street"],
-#         city: brewery["city"],
-#         state: brewery["state"],
-#         postal_code: brewery["postal_code"],
-#         # country: brewery["country"],
-#         phone: brewery["phone"],
-#         website_url: brewery["website_url"]
-#         )
-#     end
-#   end
-
-# brewery_dataset();
-
 
 Brewery.create!(
   name: "1817 Brewery",
   brewery_type: "Micro",
+  description: "Fresh, hand-crafted beer, made right here in NE Mississippi. You did a real day's work. You deserve a real beer. Drink Local.",
   street: "100 B South Olive St",
   city: "Okolona",
   state: "MS",
@@ -68,6 +48,7 @@ Brewery.create!(
 Brewery.create!(
   name: "Biloxi Brewing Co",
   brewery_type: "Micro",
+  description: "Biloxi Brewing Company is soon to be the newest craft beer manufacturer in the state, located on the beautiful Gulf Coast of Mississippi.",
   street: "186 Bohn St",
   city: "Biloxi",
   state: "MS",
@@ -80,6 +61,7 @@ Brewery.create!(
 Brewery.create!(
   name: "Chandeleur Island Brewing Company",
   brewery_type: "Micro",
+  description: "Chandeleur Brewing Company is a new microbrewery in downtown Gulfport, Mississippi which opened in 2014! We currently have 4 main staples (along with numerous seasonals) and continually add to our lineup. Make sure you stop by and see us regularly. You never know what new brew we might have hidden behind the bar for you!",
   street: "2711 14th St",
   city: "Gulfport",
   state: "Mississippi",
@@ -92,18 +74,20 @@ Brewery.create!(
 Brewery.create!(
   name: "Colludium Brewery",
   brewery_type: "Brewpub",
+  description: "Marcus and Christine Cooper (along with baby Harvey) moved from New York City to Hattiesburg, MS (Marcus's home town) with two goals: to brew great beer, and to create a space where people from all walks of life can come and disconnect from their busy schedules and reconnect with friends and family over board games. At our brewpub, in the heart of Hattiesburg, we have over 100 boardgames, a family friendly environment, and some great beers to help the good times roll. All of our beer is brewed on premises and can only be found at the brewpub.",
   street: "2108 West 4th Street",
   city: "Hattiesburg",
   state: "Mississippi",
   postal_code: "39401",
   phone: "601-402-7194",
   website_url: "http://www.colludiumbrewery.com",
-  image_url: "https://static.wixstatic.com/media/bd56f6_967a0c0124314e80bbdf07eae77e3d77~mv2_d_6250_2732_s_4_2.png/v1/fill/w_1037,h_453,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/bd56f6_967a0c0124314e80bbdf07eae77e3d77~mv2_d_6250_2732_s_4_2.png"
+  image_url: "https://scontent.ftup1-1.fna.fbcdn.net/v/t39.30808-6/281005601_1056081864985653_1700274665641252724_n.jpg?stp=dst-jpg_s960x960&_nc_cat=106&ccb=1-7&_nc_sid=e3f864&_nc_ohc=-VQPob5Qd6QAX8SsBmB&_nc_ht=scontent.ftup1-1.fna&oh=00_AT8REnzNmLfpFI-GgI_8MwBouAUc1bxlUZ7eoBNWqpW53A&oe=633B3353"
 )
 
 Brewery.create!(
   name: "Crooked Letter Brewing Co",
   brewery_type: "Brewpub",
+  description: "We are a Micro Brewery Brewery Tours $5.00 Tours Sat 1-3pm doors close at 4pm.",
   street: "503 Porter Ave",
   city: "Ocean Springs",
   state: "Mississippi",
@@ -116,6 +100,7 @@ Brewery.create!(
 Brewery.create!(
   name: "Hops and Growlers",
   brewery_type: "Micro",
+  description: "Wouldn't it be great if there was a store that had all the best craft beers together under one roof? Not only do we have them all but it is a pleasure browsing though all the greatest beers in our modernly designed high class store. Not to mention we have Twenty taps to fill up growlers with you favorites. You don't have to be a brewer to be in heaven here. Come today and try out a new beer or find one of your favorites. We are sure to have it.",
   street: "2339 Government St",
   city: "Ocean Springs",
   state: "Mississippi",
@@ -128,6 +113,7 @@ Brewery.create!(
 Brewery.create!(
   name: "Key City Brewing Co.",
   brewery_type: "Brewpub",
+  description: "Head Brewer Zack Erickson and his wife, Kaitlin. Inspired by the Belgian brewing tradition they witnessed on their honeymoon in Belgium, they began brewing small, 5-gallon batches on their stovetop. Armed with a passion for Old World beers and a newfound drive, Zack began to ponder leaving his current career in the Video Game Industry. Before too long, Kaitlin encouraged Zack to pursue his passion full-time, which lead to starting his career in the illustrious San Diego beer community, working for two award-winning breweries, (Council Brewing Co. & Groundswell Brewing Co.) while attending UC San Diego’s Brewing program. The perfect weather, incredible burritos, and mega rad beer community in San Diego were almost enough to keep him there forever, but eventually, he started yearning to brew his own recipes. Armed with practical experience and brewing theory, he decided it was time to reach for his dream. Family and the perfect building lured him to Historic Downtown Vicksburg with the dream of creating a warm and inviting brewpub where craft beer could flourish. Luckily the pairing of Parmegiani and Erickson instantly bonded, just like their food and beer, inspiring each other towards a shared creative vision that would become Vicksburg’s first brewpub. Using a 3-barrel brewhouse, Key City put its first beer on tap, Mississippi Queen, in March of 2018. Selling out of the first batch in just 6 days, the small brewhouse in the window began churning out classic and experimental styles left and right. Crushablely crispy lagers, hop-bomb IPAs, robust stouts, and out-of-this-world sours line the tap walls and fill the glasses of friends and family in Downtown Vicksburg. The wild success of Key City’s blend of both Old & New world brewing tendencies led to the purchase of the building next to the current Brewery & Eatery, where a production scale 15-barrel brewhouse & canning line is scheduled to arrive Summer of 2022. Zack and his rag-tag brewery team are excited to be bringing Key City’s beers to distribution later in 2022, so they can share their craft with the rest of Mississippi and beyond.",
   street: "1311 Washington St.",
   city: "Vicksburg",
   state: "Mississippi",
@@ -140,6 +126,7 @@ Brewery.create!(
 Brewery.create!(
   name: "Lazy Magnolia Brewing Co, LLC",
   brewery_type: "Micro",
+  description: "Our first brews were crafted under the shade of ‘lazy’ magnolia trees in the backyard. In 2005 we opened Mississippi’s first packaging brewery since prohibition. Our flagship ‘Southern Pecan’ Brown Ale has been enjoyed by tens of thousands, allowing us to grow Mississippi’s craft beer culture, one beer at a time. CHEERS YALL!",
   street: "7030 Roscoe Turner Rd",
   city: "Kiln",
   state: "Mississippi",
@@ -152,6 +139,7 @@ Brewery.create!(
 Brewery.create!(
   name: "Lucky Town Brewing Co",
   brewery_type: "Micro",
+  description: "Jackson's only brewery offering world class beer to Mississippi patrons. Located in Midtown Jackson, come see us for a tour and samples. Sláinte!",
   street: "1710 N Mill St",
   city: "Jackson",
   state: "Mississippi",
@@ -164,6 +152,7 @@ Brewery.create!(
 Brewery.create!(
   name: "Mayhew Junction Brewing Company",
   brewery_type: "Micro",
+  description: "GOOD TIMES & GREAT BREWS. Welcome to Mayhew Junction, Starkville's hometown brewery. Inspired by the people and crafted for the people.",
   street: "106 Eckford Dr",
   city: "Starkville",
   state: "Mississippi",
@@ -176,6 +165,7 @@ Brewery.create!(
 Brewery.create!(
   name: "Mighty Miss Brewing Co.",
   brewery_type: "Micro",
+  description: "Craft brewery in Greenville, Mississippi",
   street: "525 S Washington Ave Ste B",
   city: "Greenville",
   state: "Mississippi",
@@ -188,6 +178,7 @@ Brewery.create!(
 Brewery.create!(
   name: "Natchez Brewing Co",
   brewery_type: "Micro",
+  description: "Lisa Miller is the owner and founder of Natchez Brewing Company. Originally from Plymouth, England. She met her husband Patrick Miller in 1998 while he was in the Marines. After some time they lost touch. In 2001 Lisa moved across the pond and resided in Connecticut. Her career as a dog groomer led her to established her own grooming business in 2009. Our recipes and brews created by Patrick Miller, who was born in Natchez and raised in the Miss-Lou (the name of the area... Natchez MS and Vidalia LA being separated only by the Mississippi river).  At 18, Patrick left the area to join the Marines, and became a military police officer providing security on Marine One, the Presidential Helicopter. After his completed service, he continued his law enforcement career in Washington D.C. for many years until he joined the Park Service and was transferred to Asheville, North Carolina. It was here in Asheville that his love for making craft beer was ignited.",
   street: "207 High St",
   city: "Natchez",
   state: "Mississippi",
@@ -200,6 +191,7 @@ Brewery.create!(
 Brewery.create!(
   name: "Slowboat Brewing Company",
   brewery_type: "Micro",
+  description: "HOURS: Mon-Wed 3-6 (Take out only) Thurs 3-10 Fri-Sat 3-12 Brewer owned & operated artisan brewery located in the Free State of Jones. Rock the Boat Slowboat Brewing Company is a small, brewer owned and family operated micro located in The Free State of Jones, downtown Laurel, MS. Slowboat's main focus is small batch artisan styles, including Farmhouse, Wild, Belgian style, Barrel-aged, experimental ales, and an ever-evolving portfolio of popular American craft beer styles. We operate our business on three basic principles: Never sacrifice Quality for Quantity, Creativity for Comfort, or Passion for Profit Slowboat is deeply committed to refining our craft, while holding true to thousands of years of brewing history and tradition. Our objective is not to produce large quantities of beer for the masses. We strive produce beers of spectacular quality that we can be proud to call our own. We can't promise that you'll love our beer. We understand that everyone has different tastes. What we can promise is that we LOVE our beer. And we hope our passion for brewing shines through in every glass.",
   street: "318 W 5th St",
   city: "Laurel",
   state: "Mississippi",
@@ -212,6 +204,7 @@ Brewery.create!(
 Brewery.create!(
   name: "Southern Prohibition Brewing",
   brewery_type: "Micro",
+  description: "At SoPro Brewing, we don’t just brew beer, we create unique experiences. Since opening our doors in 2013, our Head Brewer, Ben Green, has driven that process. He is deeply invested from the creative process developing recipes, naming beers, and directing can artwork to the execution using the finest, hand selected ingredients and state of the art techniques. The result is a wide selection of high-quality, enjoyable, and innovative beers.",
   street: "301 Mobile St",
   city: "Hattiesburg",
   state: "Mississippi",
@@ -224,6 +217,7 @@ Brewery.create!(
 Brewery.create!(
   name: "Threefoot Brewing Company, LLC",
   brewery_type: "Contract",
+  description: "Meridian's craft beer company. Mississippi’s first Microbrewery. PROCEED AND BE BOLD. DRINK THREEFOOT BEER! #proceedandbebold",
   street: "4010 23rd Avenue",
   city: "Meridian",
   state: "Mississippi",
@@ -236,6 +230,7 @@ Brewery.create!(
 Brewery.create!(
   name: "Yalobusha Brewing Company",
   brewery_type: "Micro",
+  description: "Brewed In The Red Clay Hills Of North Mississippi",
   street: "102 S Main St",
   city: "Water Valley",
   state: "Mississippi",
