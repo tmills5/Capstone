@@ -27,9 +27,17 @@ class CommentsController < ApplicationController
         render json: comment, status: :created
     end
 
+    def update
+        comment = Comment.find(params[:id])
+        if comment
+            comment.update!(comment_params)
+            render json: comment, status: :accepted
+        else
+            render json: {error: "Comment Not Found"}, status: :not_found
+    end
+
 
     def destroy
-        # brewery = Brewery.find(params[:brewery_id])
         comment = Comment.find(params[:id])
         if comment
             comment.destroy
@@ -44,5 +52,6 @@ class CommentsController < ApplicationController
     def comment_params
         params.permit(:comment_body, :user_id, :brewery_id)
     end 
+
 
 end
