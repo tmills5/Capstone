@@ -23,7 +23,6 @@ function Login( {setUser, navigate} ) {
       .then(user => {
         setUser(user);
 
-        
         // need the values from the object. user.error is an object but i need
         // it in an array
         if(user.error) setErrors(Object.values(user.error))
@@ -58,14 +57,7 @@ function Login( {setUser, navigate} ) {
                 {/* <!-- Password input --> */}
                 <div className="form-outline mb-4">
                   <MDBInput label="Password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                  {/* <label className="form-label" htmlFor="form1Example2">Password</label> */}
                 </div>
-
-                {/* <!-- 2 column grid layout for inline styling --> */}
-                {/* <div className="row mb-4">
-                  <div className="col d-flex justify-content-center">
-                  </div>
-                </div> */}
 
                 {/* <!-- Submit button --> */}
                 <button type="submit" className="btn btn-primary btn-block" onClick={onLoginSubmit}>Sign in</button>

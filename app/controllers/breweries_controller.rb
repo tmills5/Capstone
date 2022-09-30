@@ -2,7 +2,7 @@ class BreweriesController < ApplicationController
     wrap_parameters format: []
     
     def index
-        breweries = Brewery.all
+        breweries = Brewery.all.order(:id)
         render json: breweries
     end
 

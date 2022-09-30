@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
     def show
         comment = Comment.find(params[:id])
         if comment
-            render json: comment, include: [:user]
+            render json: comment
         else
             render json: {error: "Comment Not Found"}, status: :not_found
         end
@@ -34,6 +34,7 @@ class CommentsController < ApplicationController
             render json: comment, status: :accepted
         else
             render json: {error: "Comment Not Found"}, status: :not_found
+        end
     end
 
 

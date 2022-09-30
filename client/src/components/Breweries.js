@@ -18,12 +18,12 @@ function Breweries( {user} ) {
               <hr/>
   
               <MDBContainer>
-                    <BreweryConsumer>
+                    <BreweryConsumer >
                       {BreweryContext => 
-                        <MDBRow>
+                        <MDBRow >
                           {BreweryContext.map(brewery=> (
-                          <MDBCol className="col-xl-3 col-md-12 mb-4">
-                            <BreweryCard brewery={brewery} key={brewery.id} /> 
+                          <MDBCol className="col-xl-3 col-md-12 mb-4" key={brewery.id}>
+                            <BreweryCard brewery={brewery} /> 
                           </MDBCol>)
                           )}
                         </MDBRow>

@@ -53,7 +53,7 @@ function SignUp( {setUser} ) {
                 <h4>Sign up to start exploring!</h4>
               {/* <!-- Email input --> */}
                 <div className="form-outline mb-4">
-                  <MDBInput label="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
+                  <MDBInput label="Email" type="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
                 </div>
                 {/* <!-- First name input --> */}
                 <div className="form-outline mb-4">

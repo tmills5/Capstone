@@ -31,8 +31,9 @@ console.log(user)
               <p className="lead fw-normal mb-1">{user.first_name} {user.last_name}</p>
               <div className="p-4" style={{"backgroundColor": "#f8f9fa"}}>
                 <p className="font-italic mb-1"><strong>Visited Breweries:</strong></p>
-                {user.comments.map(comment=> (
-                  <li key={comment.id}>{comment.brewery_name}</li>
+                {user.comments.map(comment=> ( //console.log(comment)
+                  <li key={comment.id}>{comment.brewery.name}<br/>Comment: <em>{comment.comment_body}</em></li>
+
                 ))}
               </div>
             </div>

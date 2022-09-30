@@ -2,16 +2,22 @@ class Comment < ApplicationRecord
     belongs_to :user
     belongs_to :brewery
 
-    def commenter_username
-        # byebug 
-        user.username
-    end
+    # def commenter
+    #     user["username"]
+    # end
+    # def commenter_avatar
+    #     # byebug
+    #     user["avatar"]
+    # end
 
-    def commenter_avatar
-        user.avatar
-    end
+    # def commented_brewery
+    #     brewery[:name]
+    # end
 
-    def brewery_name
-        brewery.name
-    end
+
+
+    # def brewery_name
+    # byebug
+    #     brewery.name
+    # end
 end
