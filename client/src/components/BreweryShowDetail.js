@@ -67,7 +67,7 @@ function BreweryShowDetail( {user} ) {
           <div className=" mb-4">
             {/* <!--Section: Post data-mdb--> */}
             <section className="border-bottom mb-4">
-              <img src={image_url} className="thumbnail shadow-2-strong rounded-5 mb-4" alt={name} />
+              <img src={image_url} className="thumbnail shadow-2-strong rounded-5 mb-4" alt={name} width="400px"/>
   
               <div className="row align-items-center mb-4">
                 <div className="col-lg-6 text-center text-lg-start mb-3 m-lg-0">
