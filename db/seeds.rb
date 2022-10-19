@@ -42,7 +42,7 @@ Brewery.create!(
   postal_code: "38860",
   phone: "662-305-5907",
   website_url: "https://l.facebook.com/l.php?u=https%3A%2F%2Ftwitter.com%2F1817Brewery&h=AT1yNlO-fb6Gl6de84H4c8RykrmbXBbfC-fHErgr7NhQQX5v_LYGu-F3LrnEybaTEeqCGCpElCdV72D4J1DEhj5sI4fevAwsAuonXIEiiymYEzuctzoc03bfCHq0dzg8G2FjeKtTVpYX7cwgSglhUgkJwzE",
-  image_url: "https://scontent.ftup1-1.fna.fbcdn.net/v/t39.30808-6/243164483_2070249896487400_91199706746198626_n.jpg?stp=c0.53.206.206a_dst-jpg_p206x206&_nc_cat=104&ccb=1-7&_nc_sid=da31f3&_nc_ohc=_UsaNYPFo4UAX9VlYVq&_nc_ht=scontent.ftup1-1.fna&oh=00_AT9LNRr9yrhWWnrdAR3YSYhzVmzdaQP92laou2Z-uFyH-Q&oe=63378EF8"
+  image_url: "https://res.cloudinary.com/ratebeer/image/upload/w_150,h_150,c_limit/brew_32259.jpg"
 )
 
 Brewery.create!(
@@ -81,7 +81,7 @@ Brewery.create!(
   postal_code: "39401",
   phone: "601-402-7194",
   website_url: "http://www.colludiumbrewery.com",
-  image_url: "https://scontent.ftup1-1.fna.fbcdn.net/v/t39.30808-6/281005601_1056081864985653_1700274665641252724_n.jpg?stp=dst-jpg_s960x960&_nc_cat=106&ccb=1-7&_nc_sid=e3f864&_nc_ohc=-VQPob5Qd6QAX8SsBmB&_nc_ht=scontent.ftup1-1.fna&oh=00_AT8REnzNmLfpFI-GgI_8MwBouAUc1bxlUZ7eoBNWqpW53A&oe=633B3353"
+  image_url: "https://res.cloudinary.com/ratebeer/image/upload/w_144,c_fill,d_Default_Brewery_q4okin.png,f_auto/brew_48608"
 )
 
 Brewery.create!(
