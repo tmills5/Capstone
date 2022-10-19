@@ -107,7 +107,7 @@ Brewery.create!(
   postal_code: "39564",
   phone: "228-334-5585",
   website_url: "https://www.facebook.com/hopsandgrowlers/",
-  image_url: "https://scontent.ftup1-1.fna.fbcdn.net/v/t39.30808-6/306163119_500488878750886_5842883796466969403_n.jpg?stp=dst-jpg_p526x296&_nc_cat=101&ccb=1-7&_nc_sid=730e14&_nc_ohc=-oncT4ivkg0AX8LcVpw&_nc_ht=scontent.ftup1-1.fna&oh=00_AT8LEBIhNRZYjwj6GLhjz-lDT65jv3jB2OSyA7dbwzJx0A&oe=63375CAB"
+  image_url: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/60/dc/97/hops-growlers-beer.jpg?w=1100&h=-1&s=1"
 )
 
 Brewery.create!(
@@ -159,7 +159,7 @@ Brewery.create!(
   postal_code: "39759-3710",
   phone: "662-546-0510",
   website_url: "http://www.mayhewjunction.com",
-  image_url: "https://scontent.ftup1-1.fna.fbcdn.net/v/t39.30808-6/305122473_584024043423789_4462737066714364254_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=e3f864&_nc_ohc=Kkfrwso3YbsAX_6OZ-U&_nc_ht=scontent.ftup1-1.fna&oh=00_AT-MtpuTLwUw2xRyUpESgp-1bHLtfNYT_oPjkw0UFye8Wg&oe=6337AA00"
+  image_url: "https://res.cloudinary.com/ratebeer/image/upload/w_144,c_fill,d_Default_Brewery_q4okin.png,f_auto/brew_25639"
 )
 
 Brewery.create!(
@@ -172,7 +172,7 @@ Brewery.create!(
   postal_code: "38701",
   phone: "662-379-6477",
   website_url: "https://www.facebook.com/mightymissbeer",
-  image_url: "https://scontent.ftup1-1.fna.fbcdn.net/v/t39.30808-6/304784331_160189386676386_4829870349022412955_n.jpg?stp=c208.0.206.206a_dst-jpg_p206x206&_nc_cat=103&ccb=1-7&_nc_sid=da31f3&_nc_ohc=wWX9P2b5dCAAX9E8EYN&_nc_ht=scontent.ftup1-1.fna&oh=00_AT-AwfHusoV7iZ45UCG1whM4dlEcXOrKWTi5jM600qctug&oe=633685A2"
+  image_url: "https://res.cloudinary.com/ratebeer/image/upload/w_144,c_fill,d_Default_Brewery_q4okin.png,f_auto/brew_32225"
 )
 
 Brewery.create!(
@@ -198,7 +198,7 @@ Brewery.create!(
   postal_code: "39440-3461",
   phone: "601-433-2723",
   website_url: "https://www.facebook.com/slowboatbrewco/",
-  image_url: "https://scontent.ftup1-1.fna.fbcdn.net/v/t39.30808-6/301692887_567002325216527_8286016358006452340_n.jpg?stp=dst-jpg_p206x206&_nc_cat=106&ccb=1-7&_nc_sid=da31f3&_nc_ohc=qsMGv75NVx4AX_TL2Ps&_nc_ht=scontent.ftup1-1.fna&oh=00_AT81TXiT4HRAigj_iWSYpC2ALV1iYn30Azj_Ua84lEc2Mw&oe=63368466"
+  image_url: "https://res.cloudinary.com/ratebeer/image/upload/w_144,c_fill,d_Default_Brewery_q4okin.png,f_auto/brew_26316"
 )
 
 Brewery.create!(
