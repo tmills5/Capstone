@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
     wrap_parameters format: []
+    # before_create :set_default_avatar
 
     def index
         render json: User.all.order(:id)
