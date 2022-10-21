@@ -12,10 +12,8 @@ function BreweryCard( {brewery} ) {
   <MDBCard className="card text-center">
 
   <div className="bg-image hover-overlay ripple rounded-circle" data-mdb-ripple-color="light">
-    <img src={image_url} className="img-fluid" alt='brewery'/>
-    <a href="#!">
+    <img src={image_url} className="img-fluid" alt='brewery' style={{"height": "150px", "margin": "10px"}} />
       <div className="mask" style={{"backgroundColor": "rgba(251, 251, 251, 0.15)"}}></div>
-    </a>
   </div>
 
   <div className="card-body">
