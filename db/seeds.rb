@@ -1,24 +1,25 @@
 require 'rest-client'
 require 'json'
 
+
 User.destroy_all
 Comment.destroy_all
 Brewery.destroy_all
 
 puts "Seeding Users..---------------------------"
 
-User.create(
+User.create!(
   email: "ty@gmail.com",
-  password: "123",
+  password_digest: "123",
   first_name: "Tyson",
   last_name: "Mills",
   username: "tyty",
   avatar: "https://yt3.ggpht.com/3BkBY3V585eOLW10tD3fBoS8WfxkqNhSU0mMxKff_urLGxATrlGlzQHm7D5_YRjEGevjdrjShQ=s600-c-k-c0x00ffffff-no-rj-rp-mo",
-  is_admin: "true"
+  is_admin: true
 )
 
 5.times do
-    User.create(
+    User.create!(
       email: Faker::Internet.email,
       password: "123",
       first_name: Faker::Name.first_name,
@@ -254,7 +255,7 @@ end
 
 puts "Seeding Newsletter Emails...---------------"
 
-20.times do
+5.times do
   Newsletter.create!(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
