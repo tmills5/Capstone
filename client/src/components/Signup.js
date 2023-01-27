@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { MDBInput } from 'mdb-react-ui-kit';
 
-function SignUp( {setUser} ) {
+function Signup( {setUser} ) {
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
   const [userFirstName, setUserFirstName] = useState('');
@@ -94,7 +94,7 @@ function SignUp( {setUser} ) {
     )
 };
 
-export default SignUp;
+export default Signup;
 
 
 
