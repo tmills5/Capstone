@@ -50,8 +50,6 @@ function App() {
         <Route exact path='/breweries/:id' element={ <BreweryShowDetail user={user}/>} />
         <Route exact path='/users/:id' element={ <UserProfile user={user} navigate={navigate}/> } />
         <Route exact path='/users/:id/edit' element={ <EditUserProfile user={user} setUser={setUser} navigate={navigate}/> } />
-
-        
       </Routes>
 
       <Footer/>
