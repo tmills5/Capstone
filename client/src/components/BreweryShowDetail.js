@@ -7,8 +7,11 @@ function BreweryShowDetail( {user} ) {
   const [newComment, setNewComment] = useState('');
 
   const params = useParams();
-  const { id, name, brewery_type, description, street, city, state, phone, website_url, image_url } = brewery 
-  console.log(commentsArray)
+  const { id, name, brewery_type, description, street, city, state, phone, website_url, image_url } = brewery;
+
+  console.log(user.id)
+  console.log("Comments Array: ", brewery.comments)
+
 
   useEffect(()=>{
     fetch(`/breweries/${params.id}`)
@@ -46,7 +49,7 @@ function BreweryShowDetail( {user} ) {
     })
   };
 
-  const adminDeleteComment = (commentId) => {
+  const deleteComment = (commentId) => {
     fetch(`/comments/${commentId}`, {
       method: "DELETE",
    }).then(()=> {
@@ -131,12 +134,13 @@ function BreweryShowDetail( {user} ) {
                               <img src={comment.user.avatar || "https://images.pexels.com/photos/1552630/pexels-photo-1552630.jpeg?auto=compress&cs=tinysrgb&w=600" } alt="" width="25" height="25" />
                               <p className="small mb-0 ms-2">{comment.user.username}</p>
                             </div>
-                            {user.is_admin ? 
-                              <button type="button" className="btn btn-info btn-sm btn-floating" onClick={()=> adminDeleteComment(comment.id)}>
+                            {user.id === comment.user_id
+                            ?
+                              <button type="button" className="btn btn-info btn-sm btn-floating" onClick={()=> deleteComment(comment.id)}>
                                 <i className="far fa-trash-alt"></i>
                               </button>
                             :
-                            ''
+                              ''
                             }
                           </div>
                         </div>

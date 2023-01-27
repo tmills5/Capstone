@@ -10,7 +10,7 @@ puts "Seeding Users..---------------------------"
 
 User.create!(
   email: "ty@gmail.com",
-  password_digest: "123",
+  password: "123",
   first_name: "Tyson",
   last_name: "Mills",
   username: "tyty",
