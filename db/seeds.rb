@@ -186,7 +186,7 @@ Brewery.create!(
   postal_code: "39120-3222",
   phone: "828-713-5311",
   website_url: "http://www.natchezbrew.com",
-  image_url: "http://www.natchezbrew.com/uploads/2/8/0/5/28052945/img-3410-2_orig.jpg"
+  image_url: "http://www.natchezbrew.com/uploads/2/8/0/5/28052945/published/two-tone-roughlogo-round.png?1575504924"
 )
 
 Brewery.create!(

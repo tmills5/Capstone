@@ -60,7 +60,7 @@ function Login( {setUser, navigate} ) {
                 </div>
 
                 {/* <!-- Submit button --> */}
-                <button type="submit" className="btn btn-primary btn-block" onClick={onLoginSubmit}>Sign in</button>
+                <button type="submit" className="btn btn-primary btn-block" onClick={onLoginSubmit}>Log in</button>
                 <hr/>
                 <div className="col text-center">
                   {/* <!-- Simple link --> */}
