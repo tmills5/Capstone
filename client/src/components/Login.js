@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { MDBInput } from 'mdb-react-ui-kit';
 
 
-function Login( {setUser, navigate} ) {
+function Login( {user, setUser, navigate} ) {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [errors, setErrors] = useState([])
@@ -22,7 +22,7 @@ function Login( {setUser, navigate} ) {
       .then(res => res.json())
       .then(user => {
         setUser(user);
-
+        
         // need the values from the object. user.error is an object but i need
         // it in an array
         if(user.error) setErrors(Object.values(user.error))
@@ -34,6 +34,8 @@ function Login( {setUser, navigate} ) {
       setPassword('');
       setErrors([]);
     }
+
+
 
     return (
     <>
