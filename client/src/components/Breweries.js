@@ -8,7 +8,7 @@ function Breweries( {user} ) {
   return (
     <div className="h-100 gradient-custom-2">
       <br/>
-      {user ? 
+      {/* {user ?  */}
         <div>
               <div id="intro" className="p-5 text-center ">
                 <h1 className="mb-3 h2">Local Breweries in Mississippi</h1>
@@ -31,8 +31,8 @@ function Breweries( {user} ) {
                     </BreweryConsumer>
               </MDBContainer>
        </div>
-            :
-            <div className="unauth-view-brew">Please Login or Sign up...</div>}
+            {/* : */}
+            {/* <div className="unauth-view-brew">Please Login or Sign up...</div>} */}
     </div>
   )
 };
